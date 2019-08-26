@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>McTicaret.Module</RootNamespace>
+    <AssemblyName>McTicaret.Module</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'EasyTest|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\EasyTest\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;EASYTEST</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Sparkline.v18.1.Core, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v18.1.UI, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Dashboard.v18.1.Core, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v18.1, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.AuditTrail.v18.1, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Chart.v18.1, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.CloneObject.v18.1, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.ConditionalAppearance.v18.1, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Dashboards.v18.1, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Kpi.v18.1, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Notifications.v18.1, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Objects.v18.1, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.PivotChart.v18.1, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.PivotGrid.v18.1, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.ReportsV2.v18.1, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Scheduler.v18.1, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.ScriptRecorder.v18.1, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Security.v18.1, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Security.Xpo.v18.1, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.TreeListEditors.v18.1, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Validation.v18.1, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.ViewVariantsModule.v18.1, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Workflow.v18.1, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Xpo.v18.1">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v18.1.Core, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v18.1.Core">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Data.v18.1">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.v18.1">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.Base.v18.1">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.BaseImpl.v18.1">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v18.1, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Workflow.Activities.v18.1, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v18.1">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v18.1.Core, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v18.1.Wizard, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v18.1, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v18.1, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v18.1, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v18.1.UI, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v18.1, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v18.1.Extensions, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v18.1.Core, Version=18.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System">
+      <Name>System</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.DurableInstancing" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.DurableInstancing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessObjects\AdresTurleri.cs" />
+    <Compile Include="BusinessObjects\AlinanSerbestMeslek.cs" />
+    <Compile Include="BusinessObjects\AlinanSiparis.cs" />
+    <Compile Include="BusinessObjects\AlinanTekflif.cs" />
+    <Compile Include="BusinessObjects\AlisFaturasi.cs" />
+    <Compile Include="BusinessObjects\AlisIadeFaturasi.cs" />
+    <Compile Include="BusinessObjects\AlisIadeIrsaliye.cs" />
+    <Compile Include="BusinessObjects\AlisIrsaliye.cs" />
+    <Compile Include="BusinessObjects\BankadanBankaya.cs" />
+    <Compile Include="BusinessObjects\BankadanKasaya.cs" />
+    <Compile Include="BusinessObjects\BankaDigerOdeme.cs" />
+    <Compile Include="BusinessObjects\BankaHareket.cs" />
+    <Compile Include="BusinessObjects\BankaHesaplari.cs" />
+    <Compile Include="BusinessObjects\Bankalar.cs" />
+    <Compile Include="BusinessObjects\BankaOdeme.cs" />
+    <Compile Include="BusinessObjects\BankaSubeleri.cs" />
+    <Compile Include="BusinessObjects\BankaTahsilat.cs" />
+    <Compile Include="BusinessObjects\BirimFiyatlar.cs" />
+    <Compile Include="BusinessObjects\BirimTurleri.cs" />
+    <Compile Include="BusinessObjects\Caddeler.cs" />
+    <Compile Include="BusinessObjects\CariHesapAdresler.cs" />
+    <Compile Include="BusinessObjects\CariHesapBankalar.cs" />
+    <Compile Include="BusinessObjects\CariHesapGruplari.cs" />
+    <Compile Include="BusinessObjects\CariHesapKontak.cs" />
+    <Compile Include="BusinessObjects\CariHesaplar.cs" />
+    <Compile Include="BusinessObjects\CariHesapTuru.cs" />
+    <Compile Include="BusinessObjects\Departmanlar.cs" />
+    <Compile Include="BusinessObjects\Depolar.cs" />
+    <Compile Include="BusinessObjects\DovizKurlari.cs" />
+    <Compile Include="BusinessObjects\DovizTurleri.cs" />
+    <Compile Include="BusinessObjects\Evraklar.cs" />
+    <Compile Include="BusinessObjects\FiyatTipleri.cs" />
+    <Compile Include="BusinessObjects\GeneralValue.cs" />
+    <Compile Include="BusinessObjects\Gorevler.cs" />
+    <Compile Include="BusinessObjects\Ilceler.cs" />
+    <Compile Include="BusinessObjects\IndirimTipleri.cs" />
+    <Compile Include="BusinessObjects\KasaBankaHareketler.cs" />
+    <Compile Include="BusinessObjects\KasadanBaknaya.cs" />
+    <Compile Include="BusinessObjects\KasadanKasaya.cs" />
+    <Compile Include="BusinessObjects\KasaDigerOdeme.cs" />
+    <Compile Include="BusinessObjects\KasaHareket.cs" />
+    <Compile Include="BusinessObjects\Kasalar.cs" />
+    <Compile Include="BusinessObjects\KasaMasrafOdeme.cs" />
+    <Compile Include="BusinessObjects\KasaOdeme.cs" />
+    <Compile Include="BusinessObjects\KasaTahsilat.cs" />
+    <Compile Include="BusinessObjects\KodTanimlari.cs" />
+    <Compile Include="BusinessObjects\Mahalle.cs" />
+    <Compile Include="BusinessObjects\Markalar.cs" />
+    <Compile Include="BusinessObjects\Masraflar.cs" />
+    <Compile Include="BusinessObjects\MasraflarGrubu.cs" />
+    <Compile Include="BusinessObjects\Personel.cs" />
+    <Compile Include="BusinessObjects\ProjeArastirma.cs" />
+    <Compile Include="BusinessObjects\ProjeGorevler.cs" />
+    <Compile Include="BusinessObjects\Projeler.cs" />
+    <Compile Include="BusinessObjects\ProjeTurleri.cs" />
+    <Compile Include="BusinessObjects\SatisFaturasi.cs" />
+    <Compile Include="BusinessObjects\SatisIadeFaturasi.cs" />
+    <Compile Include="BusinessObjects\SatisIadeIrsaliyesi.cs" />
+    <Compile Include="BusinessObjects\SatisIrsaliye.cs" />
+    <Compile Include="BusinessObjects\Sehirler.cs" />
+    <Compile Include="BusinessObjects\StokHareketleri.cs" />
+    <Compile Include="BusinessObjects\StokIslemler.cs" />
+    <Compile Include="BusinessObjects\Stoklar.cs" />
+    <Compile Include="BusinessObjects\StoklarEkBirimleri.cs" />
+    <Compile Include="BusinessObjects\StoklarGrubu.cs" />
+    <Compile Include="BusinessObjects\Ulkeler.cs" />
+    <Compile Include="BusinessObjects\Users.cs" />
+    <Compile Include="BusinessObjects\VergiDaireleri.cs" />
+    <Compile Include="BusinessObjects\VergiTurleri.cs" />
+    <Compile Include="BusinessObjects\VerilenSerbestMeslek.cs" />
+    <Compile Include="BusinessObjects\VerilenSiparis.cs" />
+    <Compile Include="BusinessObjects\VerilenTeklifler.cs" />
+    <Compile Include="Controllers\CustomizeNewActionItemsListController.cs" />
+    <Compile Include="Controllers\EvrakListViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\EvrakListViewController.Designer.cs">
+      <DependentUpon>EvrakListViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseUpdate\Updater.cs" />
+    <Compile Include="EnumObjects\GeneralEnumObjects.cs" />
+    <Compile Include="Module.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Module.Designer.cs">
+      <DependentUpon>Module.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controllers\EvrakListViewController.resx">
+      <DependentUpon>EvrakListViewController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
+    <EmbeddedResource Include="Module.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Module.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DatabaseUpdate\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Controllers\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FunctionalTests\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FunctionalTests\sample.ets" />
+    <None Include="Images\ReadMe.txt" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FunctionalTests\config.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\48x48 TCMB.png" />
+    <EmbeddedResource Include="Images\address_book.png" />
+    <EmbeddedResource Include="Images\Alım Faturası.fw.png" />
+    <EmbeddedResource Include="Images\Alım İade.fw.png" />
+    <EmbeddedResource Include="Images\barcode.png" />
+    <EmbeddedResource Include="Images\briefcase_document.png" />
+    <EmbeddedResource Include="Images\chart_area.png" />
+    <EmbeddedResource Include="Images\contract.png" />
+    <EmbeddedResource Include="Images\data_green.png" />
+    <EmbeddedResource Include="Images\Düzenle.png" />
+    <EmbeddedResource Include="Images\earth.png" />
+    <EmbeddedResource Include="Images\factory.png" />
+    <EmbeddedResource Include="Images\folder_out.png" />
+    <EmbeddedResource Include="Images\gear.png" />
+    <EmbeddedResource Include="Images\help2.png" />
+    <EmbeddedResource Include="Images\Hızlı Satış Ekle.png" />
+    <EmbeddedResource Include="Images\information.png" />
+    <EmbeddedResource Include="Images\KasaHareket.png" />
+    <EmbeddedResource Include="Images\mail_earth.png" />
+    <EmbeddedResource Include="Images\mobilephone3.png" />
+    <EmbeddedResource Include="Images\money2_edit.png" />
+    <EmbeddedResource Include="Images\package.png" />
+    <EmbeddedResource Include="Images\safe.png" />
+    <EmbeddedResource Include="Images\Satış Faturası.fw.png" />
+    <EmbeddedResource Include="Images\Satış İade.fw.png" />
+    <EmbeddedResource Include="Images\Sayım Eksiği.fw.png" />
+    <EmbeddedResource Include="Images\Sayım Fazlası.fw.png" />
+    <EmbeddedResource Include="Images\scroll.png" />
+    <EmbeddedResource Include="Images\server_to_client.png" />
+    <EmbeddedResource Include="Images\shopping_basket.png" />
+    <EmbeddedResource Include="Images\sort_descending.png" />
+    <EmbeddedResource Include="Images\Stok Devir.fw.png" />
+    <EmbeddedResource Include="Images\StokHareket.png" />
+    <EmbeddedResource Include="Images\table2_new.png" />
+    <EmbeddedResource Include="Images\Tahsilat Fişi.fw.png" />
+    <EmbeddedResource Include="Images\Tediye işi.fw.png" />
+    <EmbeddedResource Include="Images\Toptan Satış.fw.png" />
+    <EmbeddedResource Include="Images\user.png" />
+    <EmbeddedResource Include="Images\user_back.png" />
+    <EmbeddedResource Include="Images\user_headset.png" />
+    <EmbeddedResource Include="Images\wallet_closed.png" />
+    <EmbeddedResource Include="Images\simgem_tAW_icon.ico" />
+    <Content Include="Welcome.html" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
