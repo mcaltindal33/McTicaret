@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using DevExpress.Data.Filtering;
+using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Xpo;
@@ -82,7 +83,8 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
-
+        [ModelDefault("DisplayFormat", "N2")]
+        [ModelDefault("EditMask", "N2")]
         public double Miktar
         {
             get
@@ -109,6 +111,8 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
+        [ModelDefault("DisplayFormat", "N2")]
+        [ModelDefault("EditMask", "N2")]
         public double BirimFiyat
         {
             get
@@ -123,6 +127,8 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
+        [ModelDefault("DisplayFormat", "N2")]
+        [ModelDefault("EditMask", "N2")]
         public double IndirimsizTutar
         {
             get
@@ -141,6 +147,8 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
+        [ModelDefault("DisplayFormat", "N2")]
+        [ModelDefault("EditMask", "N2")]
         public double IndirimOran
         {
             get
@@ -154,6 +162,8 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
+        [ModelDefault("DisplayFormat", "N2")]
+        [ModelDefault("EditMask", "N2")]
         public double IndirimTutar
         {
             get
@@ -171,6 +181,8 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
+        [ModelDefault("DisplayFormat", "N2")]
+        [ModelDefault("EditMask", "N2")]
         public double NetTutar
         {
             get
@@ -190,6 +202,8 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
+        [ModelDefault("DisplayFormat", "N2")]
+        [ModelDefault("EditMask", "N2")]
         public double KDVOrani
         {
             get
@@ -208,6 +222,8 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
+        [ModelDefault("DisplayFormat", "N2")]
+        [ModelDefault("EditMask", "N2")]
         public double KDVTutar
         {
             get
@@ -224,6 +240,9 @@ namespace McTicaret.Module.BusinessObjects
                 }
             }
         }
+
+        [ModelDefault("DisplayFormat", "N2")]
+        [ModelDefault("EditMask", "N2")]
         public double Toplam
         {
             get

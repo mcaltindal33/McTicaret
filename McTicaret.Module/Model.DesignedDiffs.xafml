@@ -1081,22 +1081,20 @@
     <DetailView Id="VerilenTeklifler_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors" RelativeSize="21.230398069963812">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="18.905472636815919">
             <LayoutGroup Id="Evraklar" Index="0" RelativeSize="100">
-              <LayoutGroup Id="Evraklar_col1" RelativeSize="50">
-                <LayoutItem Id="Cari" RelativeSize="23.529411764705884" />
-                <LayoutItem Id="Tarih" RelativeSize="17.647058823529413" />
-                <LayoutItem Id="Turu" RelativeSize="17.647058823529413" />
-                <LayoutItem Id="BelgeNo" RelativeSize="17.647058823529413" />
-                <LayoutItem Id="Kod" ViewItem="Kod" Index="4" RelativeSize="23.529411764705884" IsNewNode="True" />
+              <LayoutGroup Id="Evraklar_col1" RelativeSize="49.928673323823112">
+                <LayoutItem Id="Cari" RelativeSize="28.571428571428573" />
+                <LayoutItem Id="Tarih" RelativeSize="21.428571428571427" />
+                <LayoutItem Id="Turu" RelativeSize="21.428571428571427" />
+                <LayoutItem Id="BelgeNo" RelativeSize="28.571428571428573" />
               </LayoutGroup>
-              <LayoutGroup Id="Evraklar_col2" RelativeSize="50">
-                <LayoutItem Id="Tutar" RelativeSize="23.529411764705884" />
-                <LayoutItem Id="Doviz" RelativeSize="17.647058823529413" />
-                <LayoutItem Id="Hareket" ViewItem="Hareket" Index="2" RelativeSize="17.647058823529413" IsNewNode="True" />
-                <LayoutItem Id="Depo" ViewItem="Depo" Index="3" RelativeSize="17.647058823529413" IsNewNode="True" />
-                <LayoutItem Id="Islem" RelativeSize="23.529411764705884" Index="4" />
-                <LayoutItem Id="Kod" RelativeSize="20" Index="5" Removed="True" />
+              <LayoutGroup Id="Evraklar_col2" RelativeSize="50.071326676176888">
+                <LayoutItem Id="Tutar" RelativeSize="28.571428571428573" />
+                <LayoutItem Id="Doviz" RelativeSize="21.428571428571427" />
+                <LayoutItem Id="Depo" ViewItem="Depo" Index="2" RelativeSize="21.428571428571427" IsNewNode="True" />
+                <LayoutItem Id="Islem" RelativeSize="41.1764705882353" Index="3" Removed="True" />
+                <LayoutItem Id="Kod" ViewItem="Kod" Index="3" RelativeSize="28.571428571428573" IsNewNode="True" Removed="True" />
               </LayoutGroup>
             </LayoutGroup>
             <LayoutGroup Id="StokIslemler" Index="0" RelativeSize="30.578512396694215" Direction="Horizontal" Removed="True">
@@ -1112,16 +1110,16 @@
               </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="HareketDetay_Group" Direction="Vertical" RelativeSize="66.224366706875756" Index="1">
+          <LayoutGroup Id="HareketDetay_Group" Direction="Vertical" RelativeSize="67.412935323383081" Index="1">
             <LayoutItem Id="HareketDetay" RelativeSize="100" />
           </LayoutGroup>
-          <LayoutGroup Id="Auto90f0943a-a0c0-44b4-8d02-849471600f9a" ShowCaption="False" Caption="" Direction="Horizontal" Index="2" RelativeSize="12.545235223160434" IsNewNode="True">
-            <LayoutItem Id="Aciklama" ViewItem="Aciklama" Index="0" RelativeSize="70.856353591160214" IsNewNode="True" />
-            <LayoutGroup Id="Auto30bb033c-e398-4026-9575-6508aa23ce06" ShowCaption="False" Caption="" Index="1" RelativeSize="29.143646408839778" IsNewNode="True">
-              <LayoutItem Id="AltToplam" ViewItem="AltToplam" Index="0" RelativeSize="23.076923076923077" IsNewNode="True" />
-              <LayoutItem Id="IndirimToplam" ViewItem="IndirimToplam" Index="1" RelativeSize="23.076923076923077" IsNewNode="True" />
-              <LayoutItem Id="KdvToplam" ViewItem="KdvToplam" Index="2" RelativeSize="23.076923076923077" IsNewNode="True" />
-              <LayoutItem Id="GenelToplam" ViewItem="GenelToplam" Index="3" RelativeSize="30.76923076923077" IsNewNode="True" />
+          <LayoutGroup Id="Auto90f0943a-a0c0-44b4-8d02-849471600f9a" ShowCaption="False" Caption="Auto90f0943a-a0c0-44b4-8d02-849471600f9a(18)" Direction="Horizontal" Index="2" RelativeSize="13.681592039800995" IsNewNode="True">
+            <LayoutItem Id="Aciklama" ViewItem="Aciklama" Index="0" RelativeSize="70.758620689655174" IsNewNode="True" />
+            <LayoutGroup Id="Auto30bb033c-e398-4026-9575-6508aa23ce06" ShowCaption="False" Caption="Auto30bb033c-e398-4026-9575-6508aa23ce06(20)" Index="1" RelativeSize="29.241379310344829" IsNewNode="True">
+              <LayoutItem Id="AltToplam" ViewItem="AltToplam" Index="0" RelativeSize="27.272727272727273" IsNewNode="True" />
+              <LayoutItem Id="IndirimToplam" ViewItem="IndirimToplam" Index="1" RelativeSize="21.818181818181817" IsNewNode="True" />
+              <LayoutItem Id="KdvToplam" ViewItem="KdvToplam" Index="2" RelativeSize="21.818181818181817" IsNewNode="True" />
+              <LayoutItem Id="GenelToplam" ViewItem="GenelToplam" Index="3" RelativeSize="29.09090909090909" IsNewNode="True" />
             </LayoutGroup>
           </LayoutGroup>
           <LayoutGroup Id="SizeableEditors" Caption="Aciklama" Direction="Horizontal" RelativeSize="33.41614906832298" Removed="True">

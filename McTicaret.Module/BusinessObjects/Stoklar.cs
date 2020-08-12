@@ -364,11 +364,13 @@ namespace McTicaret.Module.BusinessObjects
 
         protected override void OnSaving()
         {
-            if(!(Session is NestedUnitOfWork) 
+            if (!(Session is NestedUnitOfWork)
                 && (Session.DataLayer != null)
                     && Session.IsNewObject(this)
                         && string.IsNullOrEmpty(Kod))
             {
+                int dist = DistributedIdGeneratorHelper.Generate(Session.DataLayer, GetType().Name, $"StokKodu{Grup.Kod}");
+                Kod = string.Format("{0}-{1:D5}",Grup.Kod, dist);
             }
             base.OnSaving();
         }

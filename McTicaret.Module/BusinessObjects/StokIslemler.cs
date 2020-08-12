@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using DevExpress.Data.Filtering;
+using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.Base;
 using DevExpress.Xpo;
 
@@ -36,6 +37,8 @@ namespace McTicaret.Module.BusinessObjects
         private Depolar depo;
         #endregion
 
+        [ModelDefault("DisplayFormat","N2")]
+        [ModelDefault("EditMask", "N2")]
         public double AltToplam
         {
             get
@@ -50,6 +53,8 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
+        [ModelDefault("DisplayFormat", "N2")]
+        [ModelDefault("EditMask", "N2")]
         public double KdvToplam
         {
             get
@@ -64,6 +69,8 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
+        [ModelDefault("DisplayFormat", "N2")]
+        [ModelDefault("EditMask", "N2")]
         public double IndirimToplam
         {
             get
@@ -103,7 +110,8 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
-        
+        [ModelDefault("DisplayFormat", "N2")]
+        [ModelDefault("EditMask", "N2")]
         public double GenelToplam
         {
             get
@@ -178,103 +186,5 @@ namespace McTicaret.Module.BusinessObjects
                 Tutar = GenelToplam;
             base.OnSaved();
         }
-        // Created/Updated: DESKTOP-18J0PDH\PetroDATA on DESKTOP-18J0PDH at 01.04.2019 20:51
-        public new class FieldsClass : Evraklar.FieldsClass
-        {
-            public FieldsClass()
-            {
-
-            }
-
-            public FieldsClass(string propertyName) : base(propertyName)
-            {
-
-            }
-
-            public const string HareketDetayFieldName = "HareketDetay";
-
-            public OperandProperty HareketDetay
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(HareketDetayFieldName));
-                }
-            }
-
-            public const string AltToplamFieldName = "AltToplam";
-
-            public OperandProperty AltToplam
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(AltToplamFieldName));
-                }
-            }
-
-            public const string KdvToplamFieldName = "KdvToplam";
-
-            public OperandProperty KdvToplam
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(KdvToplamFieldName));
-                }
-            }
-
-            public const string IndirimToplamFieldName = "IndirimToplam";
-
-            public OperandProperty IndirimToplam
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(IndirimToplamFieldName));
-                }
-            }
-
-            public const string HareketFieldName = "Hareket";
-
-            public OperandProperty Hareket
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(HareketFieldName));
-                }
-            }
-
-            public const string DepoFieldName = "Depo";
-
-            public Depolar.FieldsClass Depo
-            {
-                get
-                {
-                    return new Depolar.FieldsClass(GetNestedName(DepoFieldName));
-                }
-            }
-
-            public const string GenelToplamFieldName = "GenelToplam";
-
-            public OperandProperty GenelToplam
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(GenelToplamFieldName));
-                }
-            }
-        }
-
-        public new static FieldsClass Fields
-        {
-            get
-            {
-                if (ReferenceEquals(_Fields, null))
-                {
-                    _Fields = (new FieldsClass());
-                }
-
-                return _Fields;
-            }
-        }
-
-        private static FieldsClass _Fields;
     }
 }

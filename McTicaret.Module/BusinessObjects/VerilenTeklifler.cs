@@ -33,83 +33,19 @@ namespace McTicaret.Module.BusinessObjects
             Islem = IslemTurleri.Teklif;
             Hareket = StokHareketTuru.TeklifSiparis;
             Tarih = DateTime.Now;
-            XPCollection<VerilenTeklifler> collection = new XPCollection<VerilenTeklifler>(Session);
-            if (collection.Count > 0)
-            {
-                switch (collection.Count.ToString().Length)
-                {
-                    case 1:
-                        BelgeNo = $"000000{collection.Count + 1}";
-                        break;
-                    case 2:
-                        BelgeNo = $"00000{collection.Count + 1}";
-                        break;
-                    case 3:
-                        BelgeNo = $"0000{collection.Count + 1}";
-                        break;
-                    case 4:
-                        BelgeNo = $"000{collection.Count + 1}";
-                        break;
-                    case 5:
-                        BelgeNo = $"00{collection.Count + 1}";
-                        break;
-                    case 6:
-                        BelgeNo = $"0{collection.Count + 1}";
-                        break;
-                    default:
-                        BelgeNo = $"{collection.Count + 1}";
-                        break;
-                }
-            }
-            else
-            {
-                BelgeNo = $"000000{collection.Count + 1}";
-            }
-
-            // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
         }
-
-        // Created/Updated: DESKTOP-18J0PDH\PetroDATA on DESKTOP-18J0PDH at 26.03.2019 18:20
-        public new class FieldsClass : StokIslemler.FieldsClass
+        protected override void OnSaving()
         {
-            public FieldsClass()
+            if (!(Session is NestedUnitOfWork)
+                && (Session.DataLayer != null)
+                    && Session.IsNewObject(this)
+                        && string.IsNullOrEmpty(Kod))
             {
-
+                int dist = DistributedIdGeneratorHelper.Generate(Session.DataLayer, GetType().Name, $"VerilenTeklifler{Tarih.Year}{Tarih.Month}");
+                Kod = string.Format("PRP-{0}-{1}-{2:D5}", Tarih.Year, Tarih.Month, dist);
             }
-
-            public FieldsClass(string propertyName) : base(propertyName)
-            {
-
-            }
+            base.OnSaving();
         }
 
-        public new static FieldsClass Fields
-        {
-            get
-            {
-                if (ReferenceEquals(_Fields, null))
-                {
-                    _Fields = (new FieldsClass());
-                }
-
-                return _Fields;
-            }
-        }
-
-        private static FieldsClass _Fields;
-        //private string _PersistentProperty;
-        //[XafDisplayName("My display name"), ToolTip("My hint message")]
-        //[ModelDefault("EditMask", "(000)-00"), Index(0), VisibleInListView(false)]
-        //[Persistent("DatabaseColumnName"), RuleRequiredField(DefaultContexts.Save)]
-        //public string PersistentProperty {
-        //    get { return _PersistentProperty; }
-        //    set { SetPropertyValue("PersistentProperty", ref _PersistentProperty, value); }
-        //}
-
-        //[Action(Caption = "My UI Action", ConfirmationMessage = "Are you sure?", ImageName = "Attention", AutoCommit = true)]
-        //public void ActionMethod() {
-        //    // Trigger a custom business logic for the current record in the UI (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112619.aspx).
-        //    this.PersistentProperty = "Paid";
-        //}
     }
 }
