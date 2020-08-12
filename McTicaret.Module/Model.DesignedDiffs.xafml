@@ -36,7 +36,7 @@
   </BOModel>
   <NavigationItems NavigationStyle="TreeList" DefaultLeafImageName="BO_Address" DefaultParentImageName="BO_Address" GenerateRelatedAnalysisGroup="True" GenerateRelatedReportsGroup="True" GenerateRelatedViewVariantsGroup="True" StartupNavigationItem="">
     <Items>
-      <Item Id="Alimlar" Caption="Alımlar" ImageName="Alım Faturası.fw" IsNewNode="True">
+      <Item Id="Alimlar" Caption="Alımlar" ImageName="Action_Open" IsNewNode="True">
         <Items IsNewNode="True">
           <Item Id="AlinanSerbestMeslek_ListView" ViewId="AlinanSerbestMeslek_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="AlinanTekflif_ListView" ViewId="AlinanTekflif_ListView" ObjectKey="" IsNewNode="True" />
@@ -47,12 +47,12 @@
           <Item Id="VerilenSiparis_ListView" ViewId="VerilenSiparis_ListView" ObjectKey="" IsNewNode="True" />
         </Items>
       </Item>
-      <Item Id="CariHesap" Caption="Cari Hesap" ImageName="BO_Customer" IsNewNode="True">
+      <Item Id="CariHesap" Caption="Cari Hesap" ImageName="Action_Open" IsNewNode="True">
         <Items IsNewNode="True">
           <Item Id="CariHesaplar_ListView" ViewId="CariHesaplar_ListView" ObjectKey="" IsNewNode="True" />
         </Items>
       </Item>
-      <Item Id="Default">
+      <Item Id="Default" ImageName="Action_Open">
         <Items>
           <Item Id="AdresTurleri_ListView" Removed="True" />
           <Item Id="AlinanSerbestMeslek_ListView" Removed="True" />
@@ -125,7 +125,7 @@
           <Item Id="VerilenTeklifler_ListView" Removed="True" />
         </Items>
       </Item>
-      <Item Id="Finans" Caption="Finans İşlemleri" ImageName="Tahsilat Fişi.fw" IsNewNode="True">
+      <Item Id="Finans" Caption="Finans İşlemleri" ImageName="Action_Open" IsNewNode="True">
         <Items IsNewNode="True">
           <Item Id="BankaIslem" Caption="Bankacılık İşlemleri" ImageName="wallet_closed" IsNewNode="True">
             <Items IsNewNode="True">
@@ -148,27 +148,27 @@
           </Item>
         </Items>
       </Item>
-      <Item Id="InsanKaynaklari" Caption="Insan Kaynaklari" ImageName="BO_Employee" IsNewNode="True">
+      <Item Id="InsanKaynaklari" Caption="Insan Kaynaklari" ImageName="Action_Open" IsNewNode="True">
         <Items IsNewNode="True">
           <Item Id="Departmanlar_ListView" ViewId="Departmanlar_ListView" ObjectKey="" ImageName="BO_Department" IsNewNode="True" />
           <Item Id="Personel_ListView" ViewId="Personel_ListView" ObjectKey="" ImageName="BO_Person" IsNewNode="True" />
         </Items>
       </Item>
-      <Item Id="Isletme" Caption="İşletme" IsNewNode="True" />
-      <Item Id="Kullanici" Caption="Kullanıcı İşlemleri" ImageName="BO_Customer" IsNewNode="True">
+      <Item Id="Isletme" Caption="İşletme" ImageName="Action_Open" IsNewNode="True" />
+      <Item Id="Kullanici" Caption="Kullanıcı İşlemleri" ImageName="Action_Open" IsNewNode="True">
         <Items IsNewNode="True">
           <Item Id="Event_ListView" ViewId="Event_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="Users_ListView" ViewId="Users_ListView" ObjectKey="" IsNewNode="True" />
         </Items>
       </Item>
-      <Item Id="Masraflar" ImageName="Tediye işi.fw" IsNewNode="True">
+      <Item Id="Masraflar" ImageName="Action_Open" IsNewNode="True">
         <Items IsNewNode="True">
           <Item Id="Masraflar_ListView" ViewId="Masraflar_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="MasraflarGrubu_ListView" ViewId="MasraflarGrubu_ListView" ObjectKey="" IsNewNode="True" />
         </Items>
       </Item>
-      <Item Id="Reports" ImageName="Action_Report_Object_Inplace_Preview" />
-      <Item Id="SatisIslemleri" Caption="Satışlar" ImageName="Satış İade.fw" IsNewNode="True">
+      <Item Id="Reports" ImageName="Action_Open" />
+      <Item Id="SatisIslemleri" Caption="Satışlar" ImageName="Action_Open" IsNewNode="True">
         <Items IsNewNode="True">
           <Item Id="AlinanSiparis_ListView" ViewId="AlinanSiparis_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="SatisFaturasi_ListView" ViewId="SatisFaturasi_ListView" ObjectKey="" IsNewNode="True" />
@@ -179,7 +179,7 @@
           <Item Id="VerilenTeklifler_ListView" ViewId="VerilenTeklifler_ListView" ObjectKey="" IsNewNode="True" />
         </Items>
       </Item>
-      <Item Id="Stok" Caption="Stok İşlemleri" ImageName="Stok Devir.fw" IsNewNode="True">
+      <Item Id="Stok" Caption="Stok İşlemleri" ImageName="Action_Open" IsNewNode="True">
         <Items IsNewNode="True">
           <Item Id="BirimFiyatlar_ListView" ViewId="BirimFiyatlar_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="Depolar_ListView" ViewId="Depolar_ListView" ObjectKey="" IsNewNode="True" />
@@ -188,7 +188,7 @@
           <Item Id="StoklarGrubu_ListView" ViewId="StoklarGrubu_ListView" ObjectKey="" IsNewNode="True" />
         </Items>
       </Item>
-      <Item Id="Tanimlar" Caption="Tanımlar" ImageName="Action_Workflow_ShowWorkflowInstances" IsNewNode="True">
+      <Item Id="Tanimlar" Caption="Tanımlar" ImageName="Action_Open" IsNewNode="True">
         <Items IsNewNode="True">
           <Item Id="AdresTurleri_ListView" ViewId="AdresTurleri_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="Bankalar_ListView" ViewId="Bankalar_ListView" ObjectKey="" IsNewNode="True" />

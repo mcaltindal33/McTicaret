@@ -16,9 +16,6 @@ namespace McTicaret.Win {
         /// </summary>
         [STAThread]
         static void Main() {
-#if EASYTEST
-            DevExpress.ExpressApp.Win.EasyTest.EasyTestRemotingRegistration.Register();
-#endif
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             EditModelPermission.AlwaysGranted = System.Diagnostics.Debugger.IsAttached;
@@ -27,24 +24,11 @@ namespace McTicaret.Win {
             }
             Tracing.Initialize();
             McTicaretWindowsFormsApplication winApplication = new McTicaretWindowsFormsApplication();
-            // Refer to the https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112680.aspx help article for more details on how to provide a custom splash form.
-            //winApplication.SplashScreen = new DevExpress.ExpressApp.Win.Utils.DXSplashScreen("YourSplashImage.png");
             SecurityAdapterHelper.Enable();
-            
-            if (ConfigurationManager.ConnectionStrings["ConnectionString"] != null) {
-                winApplication.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-            }
-#if EASYTEST
-            if(ConfigurationManager.ConnectionStrings["EasyTestConnectionString"] != null) {
-                winApplication.ConnectionString = ConfigurationManager.ConnectionStrings["EasyTestConnectionString"].ConnectionString;
-            }
-#endif
-#if DEBUG
-            if(System.Diagnostics.Debugger.IsAttached && winApplication.CheckCompatibilityType == CheckCompatibilityType.DatabaseSchema) {
-                winApplication.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways;
-            }
-#endif
-            try {
+            winApplication.ConnectionString = SQLiteConnectionProvider.GetConnectionString("BenimDATA.DLL");
+            winApplication.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways;
+            try
+            {
                 winApplication.Setup();
                 winApplication.Start();
             }

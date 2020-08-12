@@ -9,7 +9,6 @@ using DevExpress.ExpressApp.Security;
 using DevExpress.ExpressApp.Security.ClientServer;
 
 namespace McTicaret.Win {
-    // For more typical usage scenarios, be sure to check out https://documentation.devexpress.com/eXpressAppFramework/DevExpressExpressAppWinWinApplicationMembersTopicAll.aspx
     public partial class McTicaretWindowsFormsApplication : WinApplication {
         #region Default XAF configuration options (https://www.devexpress.com/kb=T501418)
         static McTicaretWindowsFormsApplication() {
