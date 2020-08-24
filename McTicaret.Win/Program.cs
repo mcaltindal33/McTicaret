@@ -25,7 +25,7 @@ namespace McTicaret.Win {
             Tracing.Initialize();
             McTicaretWindowsFormsApplication winApplication = new McTicaretWindowsFormsApplication();
             SecurityAdapterHelper.Enable();
-            winApplication.ConnectionString = SQLiteConnectionProvider.GetConnectionString("BenimDATA.DLL");
+            winApplication.ConnectionString = SQLiteConnectionProvider.GetConnectionString("BenimDATA.MCA");
             winApplication.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways;
             try
             {

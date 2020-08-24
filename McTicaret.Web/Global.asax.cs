@@ -3,6 +3,7 @@ using System.Configuration;
 using System.Web.Configuration;
 using System.Web;
 
+using DevExpress.Xpo.DB;
 using DevExpress.ExpressApp;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
@@ -27,19 +28,8 @@ namespace McTicaret.Web {
             WebApplication.SetInstance(Session, new McTicaretAspNetApplication());
             DevExpress.ExpressApp.Web.Templates.DefaultVerticalTemplateContentNew.ClearSizeLimit();
             WebApplication.Instance.SwitchToNewStyle();
-            if(ConfigurationManager.ConnectionStrings["ConnectionString"] != null) {
-                WebApplication.Instance.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-            }
-#if EASYTEST
-            if(ConfigurationManager.ConnectionStrings["EasyTestConnectionString"] != null) {
-                WebApplication.Instance.ConnectionString = ConfigurationManager.ConnectionStrings["EasyTestConnectionString"].ConnectionString;
-            }
-#endif
-#if DEBUG
-            if(System.Diagnostics.Debugger.IsAttached && WebApplication.Instance.CheckCompatibilityType == CheckCompatibilityType.DatabaseSchema) {
-                WebApplication.Instance.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways;
-            }
-#endif
+            WebApplication.Instance.ConnectionString = SQLiteConnectionProvider.GetConnectionString("BenimDATA.MCA");
+            WebApplication.Instance.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways;
             WebApplication.Instance.Setup();
             WebApplication.Instance.Start();
         }
