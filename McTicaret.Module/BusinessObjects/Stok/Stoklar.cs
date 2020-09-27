@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Linq;
 using DevExpress.Data.Filtering;
+using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Xpo;
@@ -220,6 +221,8 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
+        [ModelDefault("DisplayFormat","N2")]
+        [ModelDefault("EditMask","N2")]
         public double MinimumStokMiktari
         {
             get
@@ -232,6 +235,8 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
+        [ModelDefault("DisplayFormat", "N2")]
+        [ModelDefault("EditMask", "N2")]
         public double MaksimumStokMiktari
         {
             get
@@ -283,6 +288,8 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
+        [ModelDefault("DisplayFormat", "N2")]
+        [ModelDefault("EditMask", "N2")]
         public double AlisFiyati
         {
             get
@@ -295,6 +302,8 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
+        [ModelDefault("DisplayFormat", "N2")]
+        [ModelDefault("EditMask", "N2")]
         public double MaliyetFiyati
         {
             get
@@ -307,6 +316,8 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
+        [ModelDefault("DisplayFormat", "N2")]
+        [ModelDefault("EditMask", "N2")]
         public double PerakendeSatis
         {
             get
@@ -319,6 +330,8 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
+        [ModelDefault("DisplayFormat", "N2")]
+        [ModelDefault("EditMask", "N2")]
         public double ToptanSatisFiyati
         {
             get

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using DevExpress.Data.Filtering;
+using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Xpo;
@@ -49,6 +50,8 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
+        [ModelDefault("DisplayFormat", "N5")]
+        [ModelDefault("EditMask", "N5")]
         public double Kur
         {
             get
@@ -61,6 +64,8 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
+        [ModelDefault("DisplayFormat", "N5")]
+        [ModelDefault("EditMask", "N5")]
         public double Alis
         {
             get
@@ -73,6 +78,8 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
+        [ModelDefault("DisplayFormat", "N5")]
+        [ModelDefault("EditMask", "N5")]
         public double Satis
         {
             get
@@ -85,6 +92,8 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
+        [ModelDefault("DisplayFormat", "N5")]
+        [ModelDefault("EditMask", "N5")]
         public double EfektifAlis
         {
             get
@@ -97,6 +106,8 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
+        [ModelDefault("DisplayFormat", "N5")]
+        [ModelDefault("EditMask", "N5")]
         public double EfektifSatis
         {
             get
@@ -109,103 +120,5 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
-        // Created/Updated: DESKTOP-18J0PDH\PetroDATA on DESKTOP-18J0PDH at 15.03.2019 11:32
-        public new class FieldsClass : XPObject.FieldsClass
-        {
-            public FieldsClass()
-            {
-
-            }
-
-            public FieldsClass(string propertyName) : base(propertyName)
-            {
-
-            }
-
-            public const string DovizFieldName = "Doviz";
-
-            public DovizTurleri.FieldsClass Doviz
-            {
-                get
-                {
-                    return new DovizTurleri.FieldsClass(GetNestedName(DovizFieldName));
-                }
-            }
-
-            public const string TarihFieldName = "Tarih";
-
-            public OperandProperty Tarih
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(TarihFieldName));
-                }
-            }
-
-            public const string KurFieldName = "Kur";
-
-            public OperandProperty Kur
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(KurFieldName));
-                }
-            }
-
-            public const string AlisFieldName = "Alis";
-
-            public OperandProperty Alis
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(AlisFieldName));
-                }
-            }
-
-            public const string SatisFieldName = "Satis";
-
-            public OperandProperty Satis
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(SatisFieldName));
-                }
-            }
-
-            public const string EfektifAlisFieldName = "EfektifAlis";
-
-            public OperandProperty EfektifAlis
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(EfektifAlisFieldName));
-                }
-            }
-
-            public const string EfektifSatisFieldName = "EfektifSatis";
-
-            public OperandProperty EfektifSatis
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(EfektifSatisFieldName));
-                }
-            }
-        }
-
-        public new static FieldsClass Fields
-        {
-            get
-            {
-                if (ReferenceEquals(_Fields, null))
-                {
-                    _Fields = (new FieldsClass());
-                }
-
-                return _Fields;
-            }
-        }
-
-        private static FieldsClass _Fields;
     }
 }

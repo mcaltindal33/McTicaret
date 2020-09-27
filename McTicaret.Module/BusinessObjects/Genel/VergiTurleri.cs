@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Linq;
 using DevExpress.Data.Filtering;
+using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.Base;
 using DevExpress.Xpo;
 
@@ -18,38 +19,6 @@ namespace McTicaret.Module.BusinessObjects
         public override void AfterConstruction()
         {
             base.AfterConstruction();
-            XPCollection<VergiTurleri> collection = new XPCollection<VergiTurleri>(Session);
-            if (collection.Count > 0)
-            {
-                switch (collection.Count.ToString().Length)
-                {
-                    case 1:
-                        Kod = $"000000{collection.Count + 1}";
-                        break;
-                    case 2:
-                        Kod = $"00000{collection.Count + 1}";
-                        break;
-                    case 3:
-                        Kod = $"0000{collection.Count + 1}";
-                        break;
-                    case 4:
-                        Kod = $"000{collection.Count + 1}";
-                        break;
-                    case 5:
-                        Kod = $"00{collection.Count + 1}";
-                        break;
-                    case 6:
-                        Kod = $"0{collection.Count + 1}";
-                        break;
-                    default:
-                        Kod = $"{collection.Count + 1}";
-                        break;
-                }
-            }
-            else
-            {
-                Kod = $"000000{collection.Count + 1}";
-            }
         }
         #region Fields Region...
         private double oran;
@@ -83,6 +52,8 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
+        [ModelDefault("DisplayFormat", "N2")]
+        [ModelDefault("EditMask", "N2")]
         public double Oran
         {
             get

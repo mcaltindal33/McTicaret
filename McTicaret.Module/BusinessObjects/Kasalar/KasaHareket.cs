@@ -17,18 +17,7 @@ namespace McTicaret.Module.BusinessObjects
     [DefaultClassOptions]
     public class KasaHareket : Evraklar
     {
-        public KasaHareket()
-        {
-
-        }
-        public KasaHareket(Session session)
-            : base(session)
-        {
-        }
-        public override void AfterConstruction()
-        {
-            base.AfterConstruction();
-        }
+        public KasaHareket(Session session) : base(session) { }
         #region Fields Region...
         private KasaHareketTuru hareket;
         private Kasalar kasa;
@@ -58,53 +47,5 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
-        // Created/Updated: DESKTOP-18J0PDH\PetroDATA on DESKTOP-18J0PDH at 17.03.2019 16:55
-        public new class FieldsClass : Evraklar.FieldsClass
-        {
-            public FieldsClass()
-            {
-
-            }
-
-            public FieldsClass(string propertyName) : base(propertyName)
-            {
-
-            }
-
-            public const string KasaFieldName = "Kasa";
-
-            public Kasalar.FieldsClass Kasa
-            {
-                get
-                {
-                    return new Kasalar.FieldsClass(GetNestedName(KasaFieldName));
-                }
-            }
-
-            public const string HareketFieldName = "Hareket";
-
-            public OperandProperty Hareket
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(HareketFieldName));
-                }
-            }
-        }
-
-        public new static FieldsClass Fields
-        {
-            get
-            {
-                if (ReferenceEquals(_Fields, null))
-                {
-                    _Fields = (new FieldsClass());
-                }
-
-                return _Fields;
-            }
-        }
-
-        private static FieldsClass _Fields;
     }
 }

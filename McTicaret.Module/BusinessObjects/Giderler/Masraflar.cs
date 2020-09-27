@@ -29,38 +29,6 @@ namespace McTicaret.Module.BusinessObjects
         public override void AfterConstruction()
         {
             base.AfterConstruction();
-            XPCollection<Masraflar> collection = new XPCollection<Masraflar>(Session);
-            if (collection.Count > 0)
-            {
-                switch (collection.Count.ToString().Length)
-                {
-                    case 1:
-                        Kod = $"000000{collection.Count + 1}";
-                        break;
-                    case 2:
-                        Kod = $"00000{collection.Count + 1}";
-                        break;
-                    case 3:
-                        Kod = $"0000{collection.Count + 1}";
-                        break;
-                    case 4:
-                        Kod = $"000{collection.Count + 1}";
-                        break;
-                    case 5:
-                        Kod = $"00{collection.Count + 1}";
-                        break;
-                    case 6:
-                        Kod = $"0{collection.Count + 1}";
-                        break;
-                    default:
-                        Kod = $"{collection.Count + 1}";
-                        break;
-                }
-            }
-            else
-            {
-                Kod = $"000000{collection.Count + 1}";
-            }
         }
         #region Fields Region...
         private MasraflarGrubu grubu;
@@ -114,87 +82,5 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
-        // Created/Updated: DESKTOP-18J0PDH\PetroDATA on DESKTOP-18J0PDH at 26.03.2019 18:57
-        public new class FieldsClass : PersistentBase.FieldsClass
-        {
-            public FieldsClass()
-            {
-
-            }
-
-            public FieldsClass(string propertyName) : base(propertyName)
-            {
-
-            }
-
-            public const string KodFieldName = "Kod";
-
-            public OperandProperty Kod
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(KodFieldName));
-                }
-            }
-
-            public const string TanimFieldName = "Tanim";
-
-            public OperandProperty Tanim
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(TanimFieldName));
-                }
-            }
-
-            public const string GrubuFieldName = "Grubu";
-
-            public MasraflarGrubu.FieldsClass Grubu
-            {
-                get
-                {
-                    return new MasraflarGrubu.FieldsClass(GetNestedName(GrubuFieldName));
-                }
-            }
-
-            public const string HareketlerFieldName = "Hareketler";
-
-            public OperandProperty Hareketler
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(HareketlerFieldName));
-                }
-            }
-        }
-
-        public new static FieldsClass Fields
-        {
-            get
-            {
-                if (ReferenceEquals(_Fields, null))
-                {
-                    _Fields = (new FieldsClass());
-                }
-
-                return _Fields;
-            }
-        }
-
-        private static FieldsClass _Fields;
-        //private string _PersistentProperty;
-        //[XafDisplayName("My display name"), ToolTip("My hint message")]
-        //[ModelDefault("EditMask", "(000)-00"), Index(0), VisibleInListView(false)]
-        //[Persistent("DatabaseColumnName"), RuleRequiredField(DefaultContexts.Save)]
-        //public string PersistentProperty {
-        //    get { return _PersistentProperty; }
-        //    set { SetPropertyValue("PersistentProperty", ref _PersistentProperty, value); }
-        //}
-
-        //[Action(Caption = "My UI Action", ConfirmationMessage = "Are you sure?", ImageName = "Attention", AutoCommit = true)]
-        //public void ActionMethod() {
-        //    // Trigger a custom business logic for the current record in the UI (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112619.aspx).
-        //    this.PersistentProperty = "Paid";
-        //}
     }
 }

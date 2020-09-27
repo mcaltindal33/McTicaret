@@ -8,6 +8,7 @@ using DevExpress.Xpo;
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.SystemModule;
 using DevExpress.Persistent.Validation;
+using DevExpress.ExpressApp.Model;
 
 namespace McTicaret.Module.BusinessObjects
 {
@@ -256,6 +257,8 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
+        [ModelDefault("DisplayFormat", "N2")]
+        [ModelDefault("EditMask", "N2")]
         public double RiskLimiti
         {
             get

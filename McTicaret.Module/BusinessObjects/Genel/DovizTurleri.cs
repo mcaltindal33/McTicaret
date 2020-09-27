@@ -11,11 +11,7 @@ namespace McTicaret.Module.BusinessObjects
     [DefaultProperty(nameof(Kod))]
     public class DovizTurleri : XPObject
     {
-        public DovizTurleri(Session session)
-            : base(session)
-        {
-        }
-        public override void AfterConstruction() => base.AfterConstruction();
+        public DovizTurleri(Session session) : base(session) { }
         #region Fields Region...
         private string sembol;
         private string aciklama;
@@ -90,95 +86,12 @@ namespace McTicaret.Module.BusinessObjects
         }
 
         [Association]
-        public XPCollection<DovizKurlari> DovizKuru => GetCollection<DovizKurlari>(nameof(DovizKuru));
-
-        // Created/Updated: DESKTOP-18J0PDH\PetroDATA on DESKTOP-18J0PDH at 16.03.2019 01:44
-        public new class FieldsClass : XPObject.FieldsClass
-        {
-            public FieldsClass()
-            {
-
-            }
-
-            public FieldsClass(string propertyName) : base(propertyName)
-            {
-
-            }
-
-            public const string KodFieldName = "Kod";
-
-            public OperandProperty Kod
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(KodFieldName));
-                }
-            }
-
-            public const string TanimFieldName = "Tanim";
-
-            public OperandProperty Tanim
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(TanimFieldName));
-                }
-            }
-
-            public const string AyrintiliTanimFieldName = "AyrintiliTanim";
-
-            public OperandProperty AyrintiliTanim
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(AyrintiliTanimFieldName));
-                }
-            }
-
-            public const string AciklamaFieldName = "Aciklama";
-
-            public OperandProperty Aciklama
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(AciklamaFieldName));
-                }
-            }
-
-            public const string SembolFieldName = "Sembol";
-
-            public OperandProperty Sembol
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(SembolFieldName));
-                }
-            }
-
-            public const string DovizKuruFieldName = "DovizKuru";
-
-            public OperandProperty DovizKuru
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(DovizKuruFieldName));
-                }
-            }
-        }
-
-        public new static FieldsClass Fields
+        public XPCollection<DovizKurlari> Kurlar
         {
             get
             {
-                if (ReferenceEquals(_Fields, null))
-                {
-                    _Fields = (new FieldsClass());
-                }
-
-                return _Fields;
+                return GetCollection<DovizKurlari>(nameof(Kurlar));
             }
         }
-
-        private static FieldsClass _Fields;
     }
 }

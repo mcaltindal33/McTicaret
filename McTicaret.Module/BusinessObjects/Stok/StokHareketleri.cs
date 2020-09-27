@@ -43,6 +43,7 @@ namespace McTicaret.Module.BusinessObjects
         private Stoklar stok;
         #endregion
         [Association]
+        [ImmediatePostData]
         public Stoklar Stok
         {
             get
@@ -56,7 +57,9 @@ namespace McTicaret.Module.BusinessObjects
                 BirimFiyat = Stok.ToptanSatisFiyati;
             }
         }
+        
         [Association("StokIslemler-HareketDetay")]
+        [ImmediatePostData]
         public StokIslemler Evrak
         {
             get
@@ -85,6 +88,7 @@ namespace McTicaret.Module.BusinessObjects
 
         [ModelDefault("DisplayFormat", "N2")]
         [ModelDefault("EditMask", "N2")]
+        [ImmediatePostData]
         public double Miktar
         {
             get
@@ -113,6 +117,7 @@ namespace McTicaret.Module.BusinessObjects
 
         [ModelDefault("DisplayFormat", "N2")]
         [ModelDefault("EditMask", "N2")]
+        [ImmediatePostData]
         public double BirimFiyat
         {
             get
@@ -129,6 +134,7 @@ namespace McTicaret.Module.BusinessObjects
 
         [ModelDefault("DisplayFormat", "N2")]
         [ModelDefault("EditMask", "N2")]
+        [ImmediatePostData]
         public double IndirimsizTutar
         {
             get
@@ -149,6 +155,7 @@ namespace McTicaret.Module.BusinessObjects
 
         [ModelDefault("DisplayFormat", "N2")]
         [ModelDefault("EditMask", "N2")]
+        [ImmediatePostData]
         public double IndirimOran
         {
             get
@@ -164,6 +171,7 @@ namespace McTicaret.Module.BusinessObjects
 
         [ModelDefault("DisplayFormat", "N2")]
         [ModelDefault("EditMask", "N2")]
+        [ImmediatePostData]
         public double IndirimTutar
         {
             get
@@ -183,6 +191,7 @@ namespace McTicaret.Module.BusinessObjects
 
         [ModelDefault("DisplayFormat", "N2")]
         [ModelDefault("EditMask", "N2")]
+        [ImmediatePostData]
         public double NetTutar
         {
             get
@@ -204,6 +213,7 @@ namespace McTicaret.Module.BusinessObjects
 
         [ModelDefault("DisplayFormat", "N2")]
         [ModelDefault("EditMask", "N2")]
+        [ImmediatePostData]
         public double KDVOrani
         {
             get
@@ -224,6 +234,7 @@ namespace McTicaret.Module.BusinessObjects
 
         [ModelDefault("DisplayFormat", "N2")]
         [ModelDefault("EditMask", "N2")]
+        [ImmediatePostData]
         public double KDVTutar
         {
             get
@@ -243,6 +254,7 @@ namespace McTicaret.Module.BusinessObjects
 
         [ModelDefault("DisplayFormat", "N2")]
         [ModelDefault("EditMask", "N2")]
+        [ImmediatePostData]
         public double Toplam
         {
             get

@@ -15,22 +15,9 @@ using DevExpress.Persistent.Validation;
 namespace McTicaret.Module.BusinessObjects
 {
     [DefaultClassOptions]
-    //[ImageName("BO_Contact")]
-    //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
-    //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
-    //[Persistent("DatabaseTableName")]
-    // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
     public class KasaBankaHareketler : Evraklar
-    { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
-        public KasaBankaHareketler(Session session)
-            : base(session)
-        {
-        }
-        public override void AfterConstruction()
-        {
-            base.AfterConstruction();
-            // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
-        }
+    {
+        public KasaBankaHareketler(Session session) : base(session) { }
 
         #region Fields Region...
         private Kasalar kasa;
@@ -170,93 +157,5 @@ namespace McTicaret.Module.BusinessObjects
             BankaIslem.Delete();
         }
 
-        // Created/Updated: DESKTOP-18J0PDH\PetroDATA on DESKTOP-18J0PDH at 26.03.2019 18:16
-        public new class FieldsClass : Evraklar.FieldsClass
-        {
-            public FieldsClass()
-            {
-
-            }
-
-            public FieldsClass(string propertyName) : base(propertyName)
-            {
-
-            }
-
-            public const string KasaHareketsFieldName = "KasaHarekets";
-
-            public OperandProperty KasaHarekets
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(KasaHareketsFieldName));
-                }
-            }
-
-            public const string BankaHareketsFieldName = "BankaHarekets";
-
-            public OperandProperty BankaHarekets
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(BankaHareketsFieldName));
-                }
-            }
-
-            public const string KasaIslemFieldName = "KasaIslem";
-
-            public KasaHareket.FieldsClass KasaIslem
-            {
-                get
-                {
-                    return new KasaHareket.FieldsClass(GetNestedName(KasaIslemFieldName));
-                }
-            }
-
-            public const string BankaIslemFieldName = "BankaIslem";
-
-            public BankaHareket.FieldsClass BankaIslem
-            {
-                get
-                {
-                    return new BankaHareket.FieldsClass(GetNestedName(BankaIslemFieldName));
-                }
-            }
-
-            public const string BankaFieldName = "Banka";
-
-            public BankaHesaplari.FieldsClass Banka
-            {
-                get
-                {
-                    return new BankaHesaplari.FieldsClass(GetNestedName(BankaFieldName));
-                }
-            }
-
-            public const string KasaFieldName = "Kasa";
-
-            public Kasalar.FieldsClass Kasa
-            {
-                get
-                {
-                    return new Kasalar.FieldsClass(GetNestedName(KasaFieldName));
-                }
-            }
-        }
-
-        public new static FieldsClass Fields
-        {
-            get
-            {
-                if (ReferenceEquals(_Fields, null))
-                {
-                    _Fields = (new FieldsClass());
-                }
-
-                return _Fields;
-            }
-        }
-
-        private static FieldsClass _Fields;
     }
 }
