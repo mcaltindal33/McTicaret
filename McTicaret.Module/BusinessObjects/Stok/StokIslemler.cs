@@ -10,10 +10,7 @@ namespace McTicaret.Module.BusinessObjects
     [DefaultClassOptions]
     public class StokIslemler : Evraklar
     {
-        public StokIslemler(Session session)
-            : base(session)
-        {
-        }
+        public StokIslemler(Session session) : base(session) { }
         public override void AfterConstruction()
         {
             base.AfterConstruction();
