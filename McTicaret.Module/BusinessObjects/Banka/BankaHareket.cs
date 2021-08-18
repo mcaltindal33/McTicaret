@@ -11,7 +11,6 @@ namespace McTicaret.Module.BusinessObjects
     public class BankaHareket : Evraklar
     {
         public BankaHareket(Session session) : base(session) { }
-        public override void AfterConstruction() => base.AfterConstruction();
         #region Fields Region...
         private BankaHareketTuru hareket;
         private BankaHesaplari banka;
