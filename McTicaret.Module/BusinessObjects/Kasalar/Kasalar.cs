@@ -96,9 +96,7 @@ namespace McTicaret.Module.BusinessObjects
         {
             get
             {
-                double temp = 0;
-                temp = Giren - Cikan;
-                return temp;
+                return Giren - Cikan;
             }
         }
 

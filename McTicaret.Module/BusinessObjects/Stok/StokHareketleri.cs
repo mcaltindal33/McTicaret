@@ -16,15 +16,8 @@ namespace McTicaret.Module.BusinessObjects
     // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
     public class StokHareketleri : BaseObject
     { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
-        public StokHareketleri(Session session)
-            : base(session)
-        {
-        }
-        public override void AfterConstruction()
-        {
-            base.AfterConstruction();
-            // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
-        }
+        public StokHareketleri(Session session) : base(session) { }
+
         #region Fields Region...
         private DovizTurleri doviz;
         private Depolar depo;
@@ -42,6 +35,7 @@ namespace McTicaret.Module.BusinessObjects
         private double miktar;
         private Stoklar stok;
         #endregion
+
         [Association]
         [ImmediatePostData]
         public Stoklar Stok

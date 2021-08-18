@@ -34,13 +34,16 @@ namespace McTicaret.Module.BusinessObjects
                  && string.IsNullOrEmpty(Kod))
             {
                 KodTanimlari tanim = Session.FindObject<KodTanimlari>(new BinaryOperator("Tur", EvrakTurleri.AlimIadeFaturasi));
-                int nextSequence = DistributedIdGeneratorHelper.Generate(Session.DataLayer, this.GetType().FullName, $"{tanim.Tanim}Prefix");
                 if (tanim != null)
                 {
+                    int nextSequence = DistributedIdGeneratorHelper.Generate(Session.DataLayer, this.GetType().FullName, $"{tanim.Tanim}Prefix");
+
                     Kod = string.Format("{0}{1:D8}", tanim.Tanim, nextSequence);
                 }
                 else
                 {
+                    int nextSequence = DistributedIdGeneratorHelper.Generate(Session.DataLayer, this.GetType().FullName, $"AlisFaturaPrefix");
+
                     Kod = string.Format("{0:D8}", nextSequence);
                 }
             }

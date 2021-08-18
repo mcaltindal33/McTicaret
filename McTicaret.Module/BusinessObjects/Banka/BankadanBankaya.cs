@@ -47,7 +47,6 @@ namespace McTicaret.Module.BusinessObjects
         [VisibleInListView(false)]
         [VisibleInLookupListView(false)]
         [VisibleInDashboards(false)]
-
         public BankaHareketTuru BankadanHareket
         {
             get

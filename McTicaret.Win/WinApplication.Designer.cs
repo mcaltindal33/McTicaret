@@ -61,11 +61,14 @@
             this.viewVariantsModule = new DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule();
             this.workflowModule = new DevExpress.ExpressApp.Workflow.WorkflowModule();
             this.workflowWindowsFormsModule = new DevExpress.ExpressApp.Workflow.Win.WorkflowWindowsFormsModule();
+            this.officeModule1 = new DevExpress.ExpressApp.Office.OfficeModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // securityStrategyComplex1
             // 
+            this.securityStrategyComplex1.AllowAnonymousAccess = false;
             this.securityStrategyComplex1.Authentication = this.authenticationStandard1;
+            this.securityStrategyComplex1.PermissionsReloadMode = DevExpress.ExpressApp.Security.PermissionsReloadMode.NoCache;
             this.securityStrategyComplex1.RoleType = typeof(DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyRole);
             this.securityStrategyComplex1.SupportNavigationPermissionsForTypes = false;
             this.securityStrategyComplex1.UserType = typeof(McTicaret.Module.BusinessObjects.Users);
@@ -77,6 +80,10 @@
             // auditTrailModule
             // 
             this.auditTrailModule.AuditDataItemPersistentType = typeof(DevExpress.Persistent.BaseImpl.AuditDataItemPersistent);
+            // 
+            // cloneObjectModule
+            // 
+            this.cloneObjectModule.ClonerType = null;
             // 
             // dashboardsModule
             // 
@@ -125,6 +132,10 @@
             this.workflowModule.WorkflowInstanceKeyType = typeof(DevExpress.Workflow.Xpo.XpoInstanceKey);
             this.workflowModule.WorkflowInstanceType = typeof(DevExpress.Workflow.Xpo.XpoWorkflowInstance);
             // 
+            // officeModule1
+            // 
+            this.officeModule1.RichTextMailMergeDataType = null;
+            // 
             // McTicaretWindowsFormsApplication
             // 
             this.ApplicationName = "McTicaret";
@@ -154,6 +165,7 @@
             this.Modules.Add(this.fileAttachmentsWindowsFormsModule);
             this.Modules.Add(this.htmlPropertyEditorWindowsFormsModule);
             this.Modules.Add(this.notificationsWindowsFormsModule);
+            this.Modules.Add(this.officeModule1);
             this.Modules.Add(this.officeWindowsFormsModule);
             this.Modules.Add(this.pivotChartWindowsFormsModule);
             this.Modules.Add(this.pivotGridWindowsFormsModule);
@@ -213,5 +225,6 @@
         private DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule viewVariantsModule;
         private DevExpress.ExpressApp.Workflow.WorkflowModule workflowModule;
         private DevExpress.ExpressApp.Workflow.Win.WorkflowWindowsFormsModule workflowWindowsFormsModule;
+        private DevExpress.ExpressApp.Office.OfficeModule officeModule1;
     }
 }

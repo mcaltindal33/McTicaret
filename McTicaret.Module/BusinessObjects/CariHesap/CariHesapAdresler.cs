@@ -1,9 +1,10 @@
-﻿using System;
-using System.ComponentModel;
-using System.Linq;
-using DevExpress.Data.Filtering;
+﻿using DevExpress.Data.Filtering;
 using DevExpress.Persistent.Base;
 using DevExpress.Xpo;
+
+using System;
+using System.ComponentModel;
+using System.Linq;
 
 namespace McTicaret.Module.BusinessObjects
 {

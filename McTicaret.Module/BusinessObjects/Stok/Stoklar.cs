@@ -382,8 +382,16 @@ namespace McTicaret.Module.BusinessObjects
                     && Session.IsNewObject(this)
                         && string.IsNullOrEmpty(Kod))
             {
-                int dist = DistributedIdGeneratorHelper.Generate(Session.DataLayer, GetType().Name, $"StokKodu{Grup.Kod}");
-                Kod = string.Format("{0}-{1:D5}",Grup.Kod, dist);
+                if(Grup != null)
+                {
+                    int dist = DistributedIdGeneratorHelper.Generate(Session.DataLayer, GetType().Name, $"StokKodu{Grup.Kod}");
+                    Kod = string.Format("{0}-{1:D5}", Grup.Kod, dist);
+                }
+                else
+                {
+                    int dist = DistributedIdGeneratorHelper.Generate(Session.DataLayer, GetType().Name, $"StokKodu");
+                    Kod = string.Format("{0:D5}", dist);
+                }
             }
             base.OnSaving();
         }

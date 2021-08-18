@@ -1,0 +1,599 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="McTicaret.Module.BusinessObjects.BankadanBankaya" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAEABQABIAUAAAAAIAAAAAEAAgAQAAIAEAABAA=</HashCode>
+      <FileName>BusinessObjects\Banka\BankadanBankaya.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.BankadanKasaya" Collapsed="true">
+    <Position X="14" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\Banka\BankadanKasaya.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.BankaDigerOdeme" Collapsed="true">
+    <Position X="5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\Banka\BankaDigerOdeme.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.BankaHareket" Collapsed="true">
+    <Position X="7.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAIAAIAAAAAAAAAAAAAAAAAAAAgAAAAI=</HashCode>
+      <FileName>BusinessObjects\Banka\BankaHareket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.BankaHesaplari" Collapsed="true">
+    <Position X="58.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAgAIgAIAAIAIkAAAAhIAAIIAAAAAAAACA=</HashCode>
+      <FileName>BusinessObjects\Banka\BankaHesaplari.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.Bankalar" Collapsed="true">
+    <Position X="60.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAIAAAAAAAIEAAAAhAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\Banka\Bankalar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.BankaOdeme" Collapsed="true">
+    <Position X="7.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\Banka\BankaOdeme.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.BankaSubeleri" Collapsed="true">
+    <Position X="62.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAgAgAAIAAAAAEAAQAhAAEAIAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\Banka\BankaSubeleri.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.BankaTahsilat" Collapsed="true">
+    <Position X="9.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\Banka\BankaTahsilat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.CariHesapAdresler" Collapsed="true">
+    <Position X="57" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAGAQgQAgIJEAICAQAARAIAQEQiIFBAACACRAAABgUA=</HashCode>
+      <FileName>BusinessObjects\CariHesap\CariHesapAdresler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.CariHesapBankalar" Collapsed="true">
+    <Position X="58.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAgAAAAoAAgAIAAIACEAAAApAAAAAAAAAAAAACA=</HashCode>
+      <FileName>BusinessObjects\CariHesap\CariHesapBankalar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.CariHesapGruplari" Collapsed="true">
+    <Position X="60.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAEAAAApAAAAIAAAAIAAAAA=</HashCode>
+      <FileName>BusinessObjects\CariHesap\CariHesapGruplari.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.CariHesapKontak" Collapsed="true">
+    <Position X="62.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIMAAAAAAAAAAAQAAQAEAAEBAAAIAQAACAABAACDAQI=</HashCode>
+      <FileName>BusinessObjects\CariHesap\CariHesapKontak.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.CariHesaplar" Collapsed="true">
+    <Position X="64" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kAMAQIACIaAGAMEoFBAAKYEhANEhoRTBIgAgCYIBAEg=</HashCode>
+      <FileName>BusinessObjects\CariHesap\CariHesaplar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.CariHesapTuru" Collapsed="true">
+    <Position X="65.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAEAAAAhAAAAIACAAAAAgAA=</HashCode>
+      <FileName>BusinessObjects\CariHesap\CariHesapTuru.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.Depolar" Collapsed="true">
+    <Position X="58.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAEAAAAhACAAIACgAAAAgAA=</HashCode>
+      <FileName>BusinessObjects\Depolama\Depolar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.AdresTurleri" Collapsed="true">
+    <Position X="57" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAIEAAAAhAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\Genel\AdresTurleri.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.BirimTurleri" Collapsed="true">
+    <Position X="65.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAEAAAAhAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\Genel\BirimTurleri.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.Caddeler" Collapsed="true">
+    <Position X="67.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAQAAAgEAAgIAAAIAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\Genel\Caddeler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.DovizKurlari" Collapsed="true">
+    <Position X="60.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RBAAAAQQAAAAQYAAAEEAMAAAADAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>BusinessObjects\Genel\DovizKurlari.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.DovizTurleri" Collapsed="true">
+    <Position X="62.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>giAAAAIAAAAAAAAAACAAAAEAgAAhAAAAIAAAAIAAAAA=</HashCode>
+      <FileName>BusinessObjects\Genel\DovizTurleri.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.Evraklar" Collapsed="true">
+    <Position X="27.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gBAAAAgQAAAIAYAAABEAAMERAABBAAAAAAEAAIABAQA=</HashCode>
+      <FileName>BusinessObjects\Genel\Evraklar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.FiyatTipleri" Collapsed="true">
+    <Position X="65.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAIAiCAAQIAEAEAAhABAAoAAQAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\Genel\FiyatTipleri.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.Ilceler" Collapsed="true">
+    <Position X="58.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAIAAIAAAAAAgAEAAAAhAAAAIACAAAAAgAA=</HashCode>
+      <FileName>BusinessObjects\Genel\Ilceler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.IndirimTipleri" Collapsed="true">
+    <Position X="60.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAgAAAAIAAAAAAAAEAAAAhAAAAIACAAAAAgAA=</HashCode>
+      <FileName>BusinessObjects\Genel\IndirimTipleri.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.KodTanimlari" Collapsed="true">
+    <Position X="64" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAACAAAAIgAAAAAAAAAAAAgAAAAIAAAAAAAAIA=</HashCode>
+      <FileName>BusinessObjects\Genel\KodTanimlari.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.Mahalle" Collapsed="true">
+    <Position X="65.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAoAAAAAAAAEAAAAhBAAAIACAAAAAgAA=</HashCode>
+      <FileName>BusinessObjects\Genel\Mahalle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.Sehirler" Collapsed="true">
+    <Position X="58.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAIAAAAAAAAEAAAAhAAAAIACAAAAAgEA=</HashCode>
+      <FileName>BusinessObjects\Genel\Sehirler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.Ulkeler" Collapsed="true">
+    <Position X="67.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAEAAAAhAAAAIACAAAAAgAA=</HashCode>
+      <FileName>BusinessObjects\Genel\Ulkeler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.Users" Collapsed="true">
+    <Position X="58.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAACAAAAIgAAAAAAAABAAAIAQAACAAAAAACAAI=</HashCode>
+      <FileName>BusinessObjects\Genel\Users.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.VergiDaireleri" Collapsed="true">
+    <Position X="60.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAEAAAAhAAAAIACAAAAAgAA=</HashCode>
+      <FileName>BusinessObjects\Genel\VergiDaireleri.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.VergiTurleri" Collapsed="true">
+    <Position X="62.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAgAAAAIAAAAAAAAEAAAAhAAAAIACAAAAAgAA=</HashCode>
+      <FileName>BusinessObjects\Genel\VergiTurleri.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.GeneralValue" Collapsed="true">
+    <Position X="67.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>BusinessObjects\GeneralValue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.Masraflar" Collapsed="true">
+    <Position X="57" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAQAAAAIAAAAAAIAEAAAAhAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\Giderler\Masraflar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.MasraflarGrubu" Collapsed="true">
+    <Position X="58.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAEAQAAlAAAAJAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\Giderler\MasraflarGrubu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.KasaBankaHareketler" Collapsed="true">
+    <Position X="15.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAgAAAAoAAIAIACCAIAIgAAECAAAAAAAAAAAAIA=</HashCode>
+      <FileName>BusinessObjects\Kasalar\KasaBankaHareketler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.KasadanBaknaya" Collapsed="true">
+    <Position X="16.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\Kasalar\KasadanBaknaya.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.KasadanKasaya" Collapsed="true">
+    <Position X="18.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAIAAEAiAACAIQAAgAAAIACAAAEAAAAAAAAAAACBAA=</HashCode>
+      <FileName>BusinessObjects\Kasalar\KasadanKasaya.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.KasaDigerOdeme" Collapsed="true">
+    <Position X="54.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\Kasalar\KasaDigerOdeme.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.KasaHareket" Collapsed="true">
+    <Position X="51.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAI=</HashCode>
+      <FileName>BusinessObjects\Kasalar\KasaHareket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.Kasalar" Collapsed="true">
+    <Position X="62.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAgACAAAAAAAAIAEAAAAhAAIAIAAAAIAAAAA=</HashCode>
+      <FileName>BusinessObjects\Kasalar\Kasalar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.KasaMasrafOdeme" Collapsed="true">
+    <Position X="47.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAIgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\Kasalar\KasaMasrafOdeme.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.KasaOdeme" Collapsed="true">
+    <Position X="50" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\Kasalar\KasaOdeme.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.KasaTahsilat" Collapsed="true">
+    <Position X="52.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\Kasalar\KasaTahsilat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.Departmanlar" Collapsed="true">
+    <Position X="57" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAIAAAAAAAAEAAAAhAAAAIACAAAAAgAA=</HashCode>
+      <FileName>BusinessObjects\Personel\Departmanlar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.Gorevler" Collapsed="true">
+    <Position X="57" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAIAAAAAAAAEAAAAhAAAAIACAAAAAkAA=</HashCode>
+      <FileName>BusinessObjects\Personel\Gorevler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.Personel" Collapsed="true">
+    <Position X="62.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIQAAgAAAAAAIAAAAAAAAEAAAAJAAAACACAAAACkCI=</HashCode>
+      <FileName>BusinessObjects\Personel\Personel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.ProjeArastirma" Collapsed="true">
+    <Position X="64" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAIAAAAAAAIACAAAAAgAAAAAgAAAAIACAAIAAgAA=</HashCode>
+      <FileName>BusinessObjects\Proje\ProjeArastirma.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.ProjeGorevler" Collapsed="true">
+    <Position X="65.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAIAACAAAAIgAAAAAAAAAAAAAQAAAAECAAAAAgAA=</HashCode>
+      <FileName>BusinessObjects\Proje\ProjeGorevler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.Projeler" Collapsed="true">
+    <Position X="67.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oIAQAACAEACAkYAAgBAAAAEAQAAhAGBCIADIQqCAiAI=</HashCode>
+      <FileName>BusinessObjects\Proje\Projeler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.ProjeTurleri" Collapsed="true">
+    <Position X="57" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAIAAAAAAAAEAAAAhAAAAIACAAIAAgAA=</HashCode>
+      <FileName>BusinessObjects\Proje\ProjeTurleri.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.AlinanSerbestMeslek" Collapsed="true">
+    <Position X="2.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\SatinAlma\AlinanSerbestMeslek.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.AlinanTekflif" Collapsed="true">
+    <Position X="25.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\SatinAlma\AlinanTekflif.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.AlisFaturasi" Collapsed="true">
+    <Position X="29.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\SatinAlma\AlisFaturasi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.AlisIadeFaturasi" Collapsed="true">
+    <Position X="32" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\SatinAlma\AlisIadeFaturasi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.AlisIadeIrsaliye" Collapsed="true">
+    <Position X="36.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\SatinAlma\AlisIadeIrsaliye.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.AlisIrsaliye" Collapsed="true">
+    <Position X="38.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\SatinAlma\AlisIrsaliye.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.VerilenSiparis" Collapsed="true">
+    <Position X="41" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\SatinAlma\VerilenSiparis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.AlinanSiparis" Collapsed="true">
+    <Position X="43.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\SatisPazarlama\AlinanSiparis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.SatisFaturasi" Collapsed="true">
+    <Position X="45.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\SatisPazarlama\SatisFaturasi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.SatisIadeFaturasi" Collapsed="true">
+    <Position X="20.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\SatisPazarlama\SatisIadeFaturasi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.SatisIadeIrsaliyesi" Collapsed="true">
+    <Position X="23" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\SatisPazarlama\SatisIadeIrsaliyesi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.SatisIrsaliye" Collapsed="true">
+    <Position X="27.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\SatisPazarlama\SatisIrsaliye.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.VerilenSerbestMeslek" Collapsed="true">
+    <Position X="11.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\SatisPazarlama\VerilenSerbestMeslek.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.VerilenTeklifler" Collapsed="true">
+    <Position X="34.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessObjects\SatisPazarlama\VerilenTeklifler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.BirimFiyatlar" Collapsed="true">
+    <Position X="64" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gJAAAACwAAAAIQAAAAEAAAFgAAABaEAAAAhAAIAAAAA=</HashCode>
+      <FileName>BusinessObjects\Stok\BirimFiyatlar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.Markalar" Collapsed="true">
+    <Position X="67.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAIAAAAAAAAEAAAAhAAAAIACAAIAAgAA=</HashCode>
+      <FileName>BusinessObjects\Stok\Markalar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.StokHareketleri" Collapsed="true">
+    <Position X="60.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgBAwAIMAMYCiAAEAIABAAAEiSAQBAggGAgAAAoI=</HashCode>
+      <FileName>BusinessObjects\Stok\StokHareketleri.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.StokIslemler" Collapsed="true">
+    <Position X="33.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAwAIAAAACAIAAAABIAIEAAABAAAQAACAEAmAAAMI=</HashCode>
+      <FileName>BusinessObjects\Stok\StokIslemler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.Stoklar" Collapsed="true">
+    <Position X="62.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAkSCgAhFhIIACATigBoEQgKAhACMoISArCsAACoA=</HashCode>
+      <FileName>BusinessObjects\Stok\Stoklar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.StoklarEkBirimleri" Collapsed="true">
+    <Position X="64" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAIAAAAAAEAFgAAABYAAAAACBJAAAgSA=</HashCode>
+      <FileName>BusinessObjects\Stok\StoklarEkBirimleri.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.BusinessObjects.StoklarGrubu" Collapsed="true">
+    <Position X="65.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAEAAAAlAAAAJACAAAAAgAA=</HashCode>
+      <FileName>BusinessObjects\Stok\StoklarGrubu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.Controllers.CustomizeNewActionItemsListController" Collapsed="true">
+    <Position X="67.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAQAAAAAAAAAAAAAAAAAgAAAIAAAAIAAAA=</HashCode>
+      <FileName>Controllers\CustomizeNewActionItemsListController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.Controllers.EvrakListViewController" Collapsed="true">
+    <Position X="64" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAACAUAAAAAACAAAACAAAAAgAAAIAAAAIAAAA=</HashCode>
+      <FileName>Controllers\EvrakListViewController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.DatabaseUpdate.Updater" Collapsed="true">
+    <Position X="57" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAEAAAAAAAAAAAA=</HashCode>
+      <FileName>DatabaseUpdate\Updater.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="McTicaret.Module.McTicaretModule" Collapsed="true">
+    <Position X="60.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACCAAAAAAAQCAAAACAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Module.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="McTicaret.Module.FiyatTuru" Collapsed="true">
+    <Position X="60.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAUA=</HashCode>
+      <FileName>EnumObjects\GeneralEnumObjects.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="McTicaret.Module.ProjeOncelik" Collapsed="true">
+    <Position X="67.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAABAAABAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EnumObjects\GeneralEnumObjects.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="McTicaret.Module.StokTuru" Collapsed="true">
+    <Position X="58.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>EnumObjects\GeneralEnumObjects.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="McTicaret.Module.EvrakTurleri" Collapsed="true">
+    <Position X="58.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SAAgAgAJCAiAKARACgYiAAEEBGDoAAABAAAgQgCCAQA=</HashCode>
+      <FileName>EnumObjects\GeneralEnumObjects.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="McTicaret.Module.MalzemeTipi" Collapsed="true">
+    <Position X="65.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAQAAAIAAAAAAQAAACAAAAAAAAAAAAQAAABAAAAAA=</HashCode>
+      <FileName>EnumObjects\GeneralEnumObjects.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="McTicaret.Module.IslemTurleri" Collapsed="true">
+    <Position X="62.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAgAAAAAAAAAAAQAAAAAAAAIAAABABAAAAAA=</HashCode>
+      <FileName>EnumObjects\GeneralEnumObjects.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="McTicaret.Module.StokHareketTuru" Collapsed="true">
+    <Position X="57" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>EnumObjects\GeneralEnumObjects.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="McTicaret.Module.KasaHareketTuru" Collapsed="true">
+    <Position X="64" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>EnumObjects\GeneralEnumObjects.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="McTicaret.Module.BankaHareketTuru" Collapsed="true">
+    <Position X="57" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EnumObjects\GeneralEnumObjects.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

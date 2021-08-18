@@ -17,18 +17,8 @@ namespace McTicaret.Module.BusinessObjects
     // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
     public class Evraklar : BaseObject
     {
-        public Evraklar()
-        {
-
-        }
-        public Evraklar(Session session)
-            : base(session)
-        {
-        }
-        public override void AfterConstruction()
-        {
-            base.AfterConstruction();
-        }
+        public Evraklar() { }
+        public Evraklar(Session session) : base(session) { }
         #region Fields Region...
         private string kod;
         private CariHesaplar cari;

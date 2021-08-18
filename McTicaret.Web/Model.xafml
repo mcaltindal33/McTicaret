@@ -1,3 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application>
+  <Options DataAccessMode="Server" />
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="20.2.8.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerAspNetModule" Version="20.2.8.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="20.2.8.0" IsNewNode="True" />
+    <SchemaModule Name="SystemAspNetModule" Version="20.2.8.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="20.2.8.0" IsNewNode="True" />
+  </SchemaModules>
 </Application>

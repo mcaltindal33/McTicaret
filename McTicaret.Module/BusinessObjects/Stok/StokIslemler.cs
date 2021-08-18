@@ -7,7 +7,6 @@ using DevExpress.Xpo;
 
 namespace McTicaret.Module.BusinessObjects
 {
-    [DefaultClassOptions]
     public class StokIslemler : Evraklar
     {
         public StokIslemler(Session session) : base(session) { }
