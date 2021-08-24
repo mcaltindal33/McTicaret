@@ -52,7 +52,7 @@
           <Item Id="CariHesaplar_ListView" ViewId="CariHesaplar_ListView" ObjectKey="" IsNewNode="True" />
         </Items>
       </Item>
-      <Item Id="Default" ImageName="Action_Open">
+      <Item Id="Default" ImageName="Action_Open" Visible="False">
         <Items>
           <Item Id="AdresTurleri_ListView" Removed="True" />
           <Item Id="AlinanSerbestMeslek_ListView" Removed="True" />
@@ -64,6 +64,7 @@
           <Item Id="AlisIrsaliye_ListView" Removed="True" />
           <Item Id="BankadanBankaya_ListView" Removed="True" />
           <Item Id="BankadanKasaya_ListView" Removed="True" />
+          <Item Id="BankaDigerOdeme_ListView" Removed="True" />
           <Item Id="BankaHareket_ListView" Removed="True" />
           <Item Id="BankaHesaplari_ListView" Removed="True" />
           <Item Id="Bankalar_ListView" Removed="True" />
@@ -92,11 +93,13 @@
           <Item Id="KasaBankaHareketler_ListView" Removed="True" />
           <Item Id="KasadanBaknaya_ListView" Removed="True" />
           <Item Id="KasadanKasaya_ListView" Removed="True" />
+          <Item Id="KasaDigerOdeme_ListView" Removed="True" />
           <Item Id="KasaHareket_ListView" Removed="True" />
           <Item Id="Kasalar_ListView" Removed="True" />
           <Item Id="KasaMasrafOdeme_ListView" Removed="True" />
           <Item Id="KasaOdeme_ListView" Removed="True" />
           <Item Id="KasaTahsilat_ListView" Removed="True" />
+          <Item Id="KodTanimlari_ListView" Removed="True" />
           <Item Id="Mahalle_ListView" Removed="True" />
           <Item Id="Markalar_ListView" Removed="True" />
           <Item Id="Masraflar_ListView" Removed="True" />
@@ -112,10 +115,10 @@
           <Item Id="SatisIrsaliye_ListView" Removed="True" />
           <Item Id="Sehirler_ListView" Removed="True" />
           <Item Id="StokHareketleri_ListView" Removed="True" />
-          <Item Id="StokIslemler_ListView" Removed="True" />
           <Item Id="Stoklar_ListView" Removed="True" />
           <Item Id="StoklarEkBirimleri_ListView" Removed="True" />
           <Item Id="StoklarGrubu_ListView" Removed="True" />
+          <Item Id="TeknikServisler_ListView" Removed="True" />
           <Item Id="Ulkeler_ListView" Removed="True" />
           <Item Id="Users_ListView" Removed="True" />
           <Item Id="VergiDaireleri_ListView" Removed="True" />
@@ -131,6 +134,7 @@
             <Items IsNewNode="True">
               <Item Id="BankadanBankaya_ListView" ViewId="BankadanBankaya_ListView" ObjectKey="" IsNewNode="True" />
               <Item Id="BankadanKasaya_ListView" ViewId="BankadanKasaya_ListView" ObjectKey="" IsNewNode="True" />
+              <Item Id="BankaDigerOdeme_ListView" ViewId="BankaDigerOdeme_ListView" ObjectKey="" IsNewNode="True" />
               <Item Id="BankaHesaplari_ListView" ViewId="BankaHesaplari_ListView" ObjectKey="" IsNewNode="True" />
               <Item Id="BankaOdeme_ListView" ViewId="BankaOdeme_ListView" ObjectKey="" IsNewNode="True" />
               <Item Id="BankaTahsilat_ListView" ViewId="BankaTahsilat_ListView" ObjectKey="" IsNewNode="True" />
@@ -140,6 +144,7 @@
             <Items IsNewNode="True">
               <Item Id="KasadanBaknaya_ListView" ViewId="KasadanBaknaya_ListView" ObjectKey="" IsNewNode="True" />
               <Item Id="KasadanKasaya_ListView" ViewId="KasadanKasaya_ListView" ObjectKey="" IsNewNode="True" />
+              <Item Id="KasaDigerOdeme_ListView" ViewId="KasaDigerOdeme_ListView" ObjectKey="" IsNewNode="True" />
               <Item Id="Kasalar_ListView" ViewId="Kasalar_ListView" ObjectKey="" IsNewNode="True" />
               <Item Id="KasaMasrafOdeme_ListView" ViewId="KasaMasrafOdeme_ListView" ObjectKey="" IsNewNode="True" />
               <Item Id="KasaOdeme_ListView" ViewId="KasaOdeme_ListView" ObjectKey="" IsNewNode="True" />
@@ -203,6 +208,7 @@
           <Item Id="Gorevler_ListView" ViewId="Gorevler_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="Ilceler_ListView" ViewId="Ilceler_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="IndirimTipleri_ListView" ViewId="IndirimTipleri_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="KodTanimlari_ListView" ViewId="KodTanimlari_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="Mahalle_ListView" ViewId="Mahalle_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="Markalar_ListView" ViewId="Markalar_ListView" ObjectKey="" IsNewNode="True" />
           <Item Id="ProjeGorevler_ListView" ViewId="ProjeGorevler_ListView" ObjectKey="" IsNewNode="True" />
@@ -214,15 +220,20 @@
           <Item Id="VergiTurleri_ListView" ViewId="VergiTurleri_ListView" ObjectKey="" IsNewNode="True" />
         </Items>
       </Item>
+      <Item Id="TeknikServis" Caption="Tekniş Servis İşlemler" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="TeknikServisler_ListView" ViewId="TeknikServisler_ListView" ObjectKey="" IsNewNode="True" />
+        </Items>
+      </Item>
     </Items>
   </NavigationItems>
   <Options>
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
   <SchemaModules>
-    <SchemaModule Name="CloneObjectModule" Version="18.1.14.0" IsNewNode="True" />
-    <SchemaModule Name="SchedulerModuleBase" Version="18.1.14.0" IsNewNode="True" />
-    <SchemaModule Name="SystemModule" Version="18.1.14.0" IsNewNode="True" />
+    <SchemaModule Name="CloneObjectModule" Version="20.2.9.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="20.2.9.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="20.2.9.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
     <DetailView Id="AlinanSerbestMeslek_DetailView">

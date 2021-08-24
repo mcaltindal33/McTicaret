@@ -278,6 +278,7 @@
     <Compile Include="BusinessObjects\SatisPazarlama\VerilenSerbestMeslek.cs" />
     <Compile Include="BusinessObjects\SatinAlma\VerilenSiparis.cs" />
     <Compile Include="BusinessObjects\SatisPazarlama\VerilenTeklifler.cs" />
+    <Compile Include="BusinessObjects\TeknikServis\TeknikServisler.cs" />
     <Compile Include="Controllers\CustomizeNewActionItemsListController.cs" />
     <Compile Include="Controllers\EvrakListViewController.cs">
       <SubType>Component</SubType>
@@ -308,7 +309,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
-    <None Include="DatabaseUpdate\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Controllers\ReadMe.txt" />
