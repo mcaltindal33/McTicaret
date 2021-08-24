@@ -5,6 +5,7 @@ using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Updating;
 using DevExpress.Persistent.BaseImpl.PermissionPolicy;
 using McTicaret.Module.BusinessObjects;
+using McTicaret.Module.BusinessObjects.TeknikServis;
 
 namespace McTicaret.Module.DatabaseUpdate
 {
@@ -847,30 +848,19 @@ namespace McTicaret.Module.DatabaseUpdate
                 }
 
             }
-            KodTanimlari tanim = ObjectSpace.FindObject<KodTanimlari>(new BinaryOperator(nameof(tanim.Tur),EvrakTurleri.CariHesap));
-            if (tanim == null)
-            {
-                tanim = ObjectSpace.CreateObject<KodTanimlari>();
-                tanim.Tur = EvrakTurleri.CariHesap;
-                tanim.Tanim = "CR";
-                tanim.Sayi = 10;
-            }
-            tanim = ObjectSpace.FindObject<KodTanimlari>(new BinaryOperator(nameof(tanim.Tur),EvrakTurleri.Kasalar));
-            if (tanim == null)
-            {
-                tanim = ObjectSpace.CreateObject<KodTanimlari>();
-                tanim.Tur = EvrakTurleri.Kasalar;
-                tanim.Tanim = "KS";
-                tanim.Sayi = 8;
-            }
-            tanim = ObjectSpace.FindObject<KodTanimlari>(new BinaryOperator(nameof(tanim.Tur), EvrakTurleri.AdresTurleri));
-            if (tanim == null)
-            {
-                tanim = ObjectSpace.CreateObject<KodTanimlari>();
-                tanim.Tur = EvrakTurleri.AdresTurleri;
-                tanim.Tanim = "ADRS";
-                tanim.Sayi = 8;
-            }
+
+            KodTanimlariEkle(typeof(CariHesaplar), "CH", "-", false, false, false );
+            KodTanimlariEkle(typeof(Stoklar), "STK", "-", false, false, false);
+            KodTanimlariEkle(typeof(Depolar), "DP", "-", false, false, false);
+            KodTanimlariEkle(typeof(AlisFaturasi), "ALF", "-", false, false, false);
+            KodTanimlariEkle(typeof(AlisIadeFaturasi), "AİF", "-", false, false, false);
+            KodTanimlariEkle(typeof(AlisIadeIrsaliye), "Aİİ", "-", false, false, false);
+            KodTanimlariEkle(typeof(AlisIrsaliye), "ALİ", "-", false, false, false);
+            KodTanimlariEkle(typeof(AlinanSerbestMeslek), "ASM", "-", false, false, false);
+            KodTanimlariEkle(typeof(AlinanSiparis), "ALS", "-", false, false, false);
+            KodTanimlariEkle(typeof(AlinanTekflif), "ALT", "-", false, false, false);
+            KodTanimlariEkle(typeof(SatisFaturasi), "STF", "-", false, false, false);
+            KodTanimlariEkle(typeof(TeknikServisler), "TSF", "-", false, false, false);
             ObjectSpace.CommitChanges(); //This line persists created object(s).
         }
         public override void UpdateDatabaseBeforeUpdateSchema()
@@ -880,6 +870,20 @@ namespace McTicaret.Module.DatabaseUpdate
             //{
             //    RenameColumn("DomainObject1Table", "OldColumnName", "NewColumnName");
             //}
+        }
+        void KodTanimlariEkle(Type Tip,string Kod,string Ayrac,bool Yil,bool Ay, bool Gun)
+        {
+            KodTanimlari kod = ObjectSpace.FindObject<KodTanimlari>(new BinaryOperator("TabloTipi", Tip));
+            if(kod == null)
+            {
+                kod = ObjectSpace.CreateObject<KodTanimlari>();
+                kod.Ay = Ay;
+                kod.Ayrac = Ayrac;
+                kod.Gun = Gun;
+                kod.Kodu = Kod;
+                kod.TabloTipi = Tip;
+                kod.Yil = Yil;
+            }
         }
     }
 }

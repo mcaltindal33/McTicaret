@@ -29,8 +29,11 @@ namespace McTicaret.Web {
             WebApplication.SetInstance(Session, new McTicaretAspNetApplication());
             DevExpress.ExpressApp.Web.Templates.DefaultVerticalTemplateContentNew.ClearSizeLimit();
             WebApplication.Instance.SwitchToNewStyle();
-            WebApplication.Instance.ConnectionString = SQLiteConnectionProvider.GetConnectionString("BenimDATA.MCA");
-            WebApplication.Instance.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways;
+            if (ConfigurationManager.ConnectionStrings["ConnectionString"] != null)
+            {
+                WebApplication.Instance.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            }
+            //WebApplication.Instance.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways;
             WebApplication.Instance.Setup();
             WebApplication.Instance.Start();
         }
