@@ -25,9 +25,19 @@ namespace McTicaret.Win {
             }
             Tracing.Initialize();
             McTicaretWindowsFormsApplication winApplication = new McTicaretWindowsFormsApplication();
-            SecurityAdapterHelper.Enable();
-            winApplication.ConnectionString = SQLiteConnectionProvider.GetConnectionString("BenimDATA.MCA");
-            winApplication.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways;
+            winApplication.GetSecurityStrategy().RegisterXPOAdapterProviders();
+            //SecurityAdapterHelper.Enable();
+            if (ConfigurationManager.ConnectionStrings["ConnectionString"] != null)
+            {
+                winApplication.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            }
+
+            //winApplication.ConnectionString = SQLiteConnectionProvider.GetConnectionString("BenimDATA.MCA");
+            if (System.Diagnostics.Debugger.IsAttached && winApplication.CheckCompatibilityType == CheckCompatibilityType.DatabaseSchema)
+            {
+                winApplication.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways;
+            }
+
             try
             {
                 winApplication.Setup();

@@ -12,6 +12,7 @@
 <html>
 <head id="Head1" runat="server">
     <title>Logon</title>
+    <link href="manifest.json" rel="manifest" />
 </head>
 <body class="Dialog">
     <div id="PageContent" class="PageContent DialogPageContent">
@@ -20,5 +21,6 @@
         <div id="Content" runat="server" />
         </form>
     </div>
+    <script>navigator.serviceWorker.register('service-worker.js');</script>
 </body>
 </html>

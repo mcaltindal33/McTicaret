@@ -9,11 +9,13 @@
 <head runat="server">
     <title>Main Page</title>
     <meta http-equiv="Expires" content="0" />
+    <link href="manifest.json" rel="manifest" />
 </head>
 <body class="VerticalTemplate">
     <form id="form2" runat="server">
     <cc4:ASPxProgressControl ID="ProgressControl" runat="server" />
     <div runat="server" id="Content" />
     </form>
+    <script>navigator.serviceWorker.register('service-worker.js');</script>
 </body>
 </html>

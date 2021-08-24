@@ -6,16 +6,12 @@ using DevExpress.ExpressApp.Web;
 using DevExpress.ExpressApp.Web.Templates;
 using DevExpress.ExpressApp.Web.Templates.ActionContainers;
 
-public partial class Default : BaseXafPage
-{
-    protected override ContextActionsMenu CreateContextActionsMenu()
-    {
+public partial class Default : BaseXafPage {
+    protected override ContextActionsMenu CreateContextActionsMenu() {
         return new ContextActionsMenu(this, "Edit", "RecordEdit", "ObjectsCreation", "ListView", "Reports");
     }
-    public override Control InnerContentPlaceHolder
-    {
-        get
-        {
+    public override Control InnerContentPlaceHolder {
+        get {
             return Content;
         }
     }

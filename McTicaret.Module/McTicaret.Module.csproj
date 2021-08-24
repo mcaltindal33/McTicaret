@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>McTicaret.Module</RootNamespace>
     <AssemblyName>McTicaret.Module</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -278,6 +278,7 @@
     <Compile Include="BusinessObjects\SatisPazarlama\VerilenSerbestMeslek.cs" />
     <Compile Include="BusinessObjects\SatinAlma\VerilenSiparis.cs" />
     <Compile Include="BusinessObjects\SatisPazarlama\VerilenTeklifler.cs" />
+    <Compile Include="BusinessObjects\TeknikServis\TeknikServisDetay.cs" />
     <Compile Include="BusinessObjects\TeknikServis\TeknikServisler.cs" />
     <Compile Include="Controllers\CustomizeNewActionItemsListController.cs" />
     <Compile Include="Controllers\EvrakListViewController.cs">
@@ -286,6 +287,7 @@
     <Compile Include="Controllers\EvrakListViewController.Designer.cs">
       <DependentUpon>EvrakListViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\TeknikServislerObjectViewController.cs" />
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="EnumObjects\GeneralEnumObjects.cs" />
     <Compile Include="Module.cs">
@@ -308,13 +310,8 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Controllers\ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="FunctionalTests\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FunctionalTests\sample.ets" />
@@ -324,9 +321,10 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images\simgem_tAW_icon.ico" />
-    <Content Include="Welcome.html" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

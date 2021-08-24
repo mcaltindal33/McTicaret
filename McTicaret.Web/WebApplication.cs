@@ -86,8 +86,6 @@ namespace McTicaret.Web {
 			return dataStoreProvider;
         }
         private void McTicaretAspNetApplication_DatabaseVersionMismatch(object sender, DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs e) {
-            e.Updater.Update();
-            e.Handled = true;
         }
         private void InitializeComponent() {
             this.module1 = new DevExpress.ExpressApp.SystemModule.SystemModule();
