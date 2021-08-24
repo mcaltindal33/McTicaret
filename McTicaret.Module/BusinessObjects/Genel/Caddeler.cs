@@ -11,11 +11,8 @@ namespace McTicaret.Module.BusinessObjects
     [DefaultProperty(nameof(Tanim))]
     public class Caddeler : XPObject
     {
-        public Caddeler(Session session)
-            : base(session)
-        {
-        }
-        public override void AfterConstruction() => base.AfterConstruction();
+        public Caddeler(Session session) : base(session) { }
+        
         #region Fields Region...
         private Mahalle mahalle;
         private string tanim;

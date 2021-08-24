@@ -16,10 +16,6 @@ namespace McTicaret.Module.BusinessObjects
             : base(session)
         {
         }
-        public override void AfterConstruction()
-        {
-            base.AfterConstruction();
-        }
 
         #region Fields Region...
         private Departmanlar gorevi;

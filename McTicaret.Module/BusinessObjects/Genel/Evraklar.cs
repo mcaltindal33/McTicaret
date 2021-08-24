@@ -146,23 +146,30 @@ namespace McTicaret.Module.BusinessObjects
 
         protected override void OnSaving()
         {
-            if (!(Session is NestedUnitOfWork)
-                && (Session.DataLayer != null)
-                    && Session.IsNewObject(this)
-                        && string.IsNullOrEmpty(BelgeNo))
+            base.OnSaving();
+            if (!(Session is NestedUnitOfWork) && (Session.DataLayer != null) && Session.IsNewObject(this) && string.IsNullOrEmpty(Kod))
             {
-                int nextSequence = DistributedIdGeneratorHelper.Generate(Session.DataLayer, this.GetType().FullName, "MyServerPrefix");
-                KodTanimlari tanim = Session.FindObject<KodTanimlari>(new BinaryOperator("Tur", Turu));
+                KodTanimlari tanim = Session.FindObject<KodTanimlari>(new BinaryOperator("TabloTipi", this.GetType()));
                 if (tanim != null)
                 {
-                    BelgeNo = string.Format("{0}{1:D8}", tanim.Tanim, nextSequence);
+                    string Kodu = tanim.Kodu + tanim.Ayrac;
+                    if (tanim.Yil)
+                        Kodu += DateTime.Now.Year + tanim.Ayrac;
+                    if (tanim.Ay)
+                        Kodu += DateTime.Now.Month + tanim.Ayrac;
+                    if (tanim.Gun)
+                        Kodu += DateTime.Now.Day + tanim.Ayrac;
+                    int dist = DistributedIdGeneratorHelper.Generate(Session.DataLayer, GetType().Name, $"{Kodu}Prefix");
+                    Kodu = $"{Kodu}{dist:D5}";
+                    Kod = Kodu;
                 }
                 else
                 {
-                    BelgeNo = string.Format("{0:D8}", nextSequence);
+                    int dist = DistributedIdGeneratorHelper.Generate(Session.DataLayer, GetType().Name, $"{GetType().Name}Prefix");
+                    Kod = $"{dist:D5}";
                 }
             }
-            base.OnSaving();
+
         }
 
     }

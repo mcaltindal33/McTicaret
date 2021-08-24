@@ -17,10 +17,6 @@ namespace McTicaret.Module.BusinessObjects
             : base(session)
         {
         }
-        public override void AfterConstruction()
-        {
-            base.AfterConstruction();
-        }
         #region Fields Region...
         private double toptanSatisFiyati;
         private double perakendeSatis;
@@ -377,23 +373,30 @@ namespace McTicaret.Module.BusinessObjects
 
         protected override void OnSaving()
         {
-            if (!(Session is NestedUnitOfWork)
-                && (Session.DataLayer != null)
-                    && Session.IsNewObject(this)
-                        && string.IsNullOrEmpty(Kod))
+            base.OnSaving();
+            if (!(Session is NestedUnitOfWork) && (Session.DataLayer != null) && Session.IsNewObject(this) && string.IsNullOrEmpty(Kod))
             {
-                if(Grup != null)
+                KodTanimlari tanim = Session.FindObject<KodTanimlari>(new BinaryOperator("TabloTipi", this.GetType()));
+                if (tanim != null)
                 {
-                    int dist = DistributedIdGeneratorHelper.Generate(Session.DataLayer, GetType().Name, $"StokKodu{Grup.Kod}");
-                    Kod = string.Format("{0}-{1:D5}", Grup.Kod, dist);
+                    string Kodu = tanim.Kodu + tanim.Ayrac;
+                    if (tanim.Yil)
+                        Kodu += DateTime.Now.Year + tanim.Ayrac;
+                    if (tanim.Ay)
+                        Kodu += DateTime.Now.Month + tanim.Ayrac;
+                    if (tanim.Gun)
+                        Kodu += DateTime.Now.Day + tanim.Ayrac;
+                    int dist = DistributedIdGeneratorHelper.Generate(Session.DataLayer, GetType().Name, $"{Kodu}Prefix");
+                    Kodu = $"{Kodu}{dist:D5}";
+                    Kod = Kodu;
                 }
                 else
                 {
-                    int dist = DistributedIdGeneratorHelper.Generate(Session.DataLayer, GetType().Name, $"StokKodu");
-                    Kod = string.Format("{0:D5}", dist);
+                    int dist = DistributedIdGeneratorHelper.Generate(Session.DataLayer, GetType().Name, $"{GetType().Name}Prefix");
+                    Kod = $"{dist:D5}";
                 }
             }
-            base.OnSaving();
+
         }
     }
 }

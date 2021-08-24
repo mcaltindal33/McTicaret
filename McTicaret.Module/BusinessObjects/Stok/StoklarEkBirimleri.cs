@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Linq;
 using DevExpress.Data.Filtering;
 using DevExpress.Persistent.Base;
+using DevExpress.Persistent.BaseImpl;
 using DevExpress.Xpo;
 
 namespace McTicaret.Module.BusinessObjects
@@ -11,44 +12,32 @@ namespace McTicaret.Module.BusinessObjects
     [DefaultProperty(nameof(EkBirim))]
     public class StoklarEkBirimleri : XPObject
     {
-        public StoklarEkBirimleri(Session session)
-            : base(session)
+        public StoklarEkBirimleri(Session session) : base(session) { }
+
+        protected override void OnSaving()
         {
-        }
-        public override void AfterConstruction()
-        {
-            base.AfterConstruction();
-            XPCollection<StoklarEkBirimleri> collection = new XPCollection<StoklarEkBirimleri>(Session);
-            if (collection.Count > 0)
+            base.OnSaving();
+            if (!(Session is NestedUnitOfWork) && (Session.DataLayer != null) && Session.IsNewObject(this) && string.IsNullOrEmpty(Kod))
             {
-                switch (collection.Count.ToString().Length)
+                KodTanimlari tanim = Session.FindObject<KodTanimlari>(new BinaryOperator("TabloTipi", this.GetType()));
+                if (tanim != null)
                 {
-                    case 1:
-                        Kod = $"000000{collection.Count + 1}";
-                        break;
-                    case 2:
-                        Kod = $"00000{collection.Count + 1}";
-                        break;
-                    case 3:
-                        Kod = $"0000{collection.Count + 1}";
-                        break;
-                    case 4:
-                        Kod = $"000{collection.Count + 1}";
-                        break;
-                    case 5:
-                        Kod = $"00{collection.Count + 1}";
-                        break;
-                    case 6:
-                        Kod = $"0{collection.Count + 1}";
-                        break;
-                    default:
-                        Kod = $"{collection.Count + 1}";
-                        break;
+                    string Kodu = tanim.Kodu + tanim.Ayrac;
+                    if (tanim.Yil)
+                        Kodu += DateTime.Now.Year + tanim.Ayrac;
+                    if (tanim.Ay)
+                        Kodu += DateTime.Now.Month + tanim.Ayrac;
+                    if (tanim.Gun)
+                        Kodu += DateTime.Now.Day + tanim.Ayrac;
+                    int dist = DistributedIdGeneratorHelper.Generate(Session.DataLayer, GetType().Name, $"{Kodu}Prefix");
+                    Kodu = $"{Kodu}{dist:D5}";
+                    Kod = Kodu;
                 }
-            }
-            else
-            {
-                Kod = $"000000{collection.Count + 1}";
+                else
+                {
+                    int dist = DistributedIdGeneratorHelper.Generate(Session.DataLayer, GetType().Name, $"{GetType().Name}Prefix");
+                    Kod = $"{dist:D5}";
+                }
             }
         }
         #region Fields Region...
@@ -137,103 +126,5 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
-        // Created/Updated: DESKTOP-18J0PDH\PetroDATA on DESKTOP-18J0PDH at 26.03.2019 18:57
-        public new class FieldsClass : XPObject.FieldsClass
-        {
-            public FieldsClass()
-            {
-
-            }
-
-            public FieldsClass(string propertyName) : base(propertyName)
-            {
-
-            }
-
-            public const string KodFieldName = "Kod";
-
-            public OperandProperty Kod
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(KodFieldName));
-                }
-            }
-
-            public const string StokFieldName = "Stok";
-
-            public Stoklar.FieldsClass Stok
-            {
-                get
-                {
-                    return new Stoklar.FieldsClass(GetNestedName(StokFieldName));
-                }
-            }
-
-            public const string AnaBirimFieldName = "AnaBirim";
-
-            public BirimTurleri.FieldsClass AnaBirim
-            {
-                get
-                {
-                    return new BirimTurleri.FieldsClass(GetNestedName(AnaBirimFieldName));
-                }
-            }
-
-            public const string EkBirimFieldName = "EkBirim";
-
-            public BirimTurleri.FieldsClass EkBirim
-            {
-                get
-                {
-                    return new BirimTurleri.FieldsClass(GetNestedName(EkBirimFieldName));
-                }
-            }
-
-            public const string KatSayiFieldName = "KatSayi";
-
-            public OperandProperty KatSayi
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(KatSayiFieldName));
-                }
-            }
-
-            public const string AgirlikFieldName = "Agirlik";
-
-            public OperandProperty Agirlik
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(AgirlikFieldName));
-                }
-            }
-
-            public const string HacimM3FieldName = "HacimM3";
-
-            public OperandProperty HacimM3
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(HacimM3FieldName));
-                }
-            }
-        }
-
-        public new static FieldsClass Fields
-        {
-            get
-            {
-                if (ReferenceEquals(_Fields, null))
-                {
-                    _Fields = (new FieldsClass());
-                }
-
-                return _Fields;
-            }
-        }
-
-        private static FieldsClass _Fields;
     }
 }

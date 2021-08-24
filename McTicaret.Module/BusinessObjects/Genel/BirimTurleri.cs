@@ -12,14 +12,35 @@ namespace McTicaret.Module.BusinessObjects
     [DefaultProperty(nameof(Tanim))]
     public class BirimTurleri : BaseObject
     {
-        public BirimTurleri(Session session)
-            : base(session)
+        public BirimTurleri(Session session) : base(session) { }
+        protected override void OnSaving()
         {
+            base.OnSaving();
+            if (!(Session is NestedUnitOfWork) && (Session.DataLayer != null) && Session.IsNewObject(this) && string.IsNullOrEmpty(Kod))
+            {
+                KodTanimlari tanim = Session.FindObject<KodTanimlari>(new BinaryOperator("TabloTipi", this.GetType()));
+                if (tanim != null)
+                {
+                    string Kodu = tanim.Kodu + tanim.Ayrac;
+                    if (tanim.Yil)
+                        Kodu += DateTime.Now.Year + tanim.Ayrac;
+                    if (tanim.Ay)
+                        Kodu += DateTime.Now.Month + tanim.Ayrac;
+                    if (tanim.Gun)
+                        Kodu += DateTime.Now.Day + tanim.Ayrac;
+                    int dist = DistributedIdGeneratorHelper.Generate(Session.DataLayer, GetType().Name, $"{Kodu}Prefix");
+                    Kodu = $"{Kodu}{dist:D5}";
+                    Kod = Kodu;
+                }
+                else
+                {
+                    int dist = DistributedIdGeneratorHelper.Generate(Session.DataLayer, GetType().Name, $"{GetType().Name}Prefix");
+                    Kod = $"{dist:D5}";
+                }
+            }
+
         }
-        public override void AfterConstruction()
-        {
-            base.AfterConstruction();
-        }
+
         #region Fields Region...
         private string tanim;
         private string kod;

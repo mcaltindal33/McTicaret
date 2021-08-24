@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Linq;
 using DevExpress.Data.Filtering;
 using DevExpress.Persistent.Base;
+using DevExpress.Persistent.BaseImpl;
 using DevExpress.Xpo;
 
 namespace McTicaret.Module.BusinessObjects
@@ -15,40 +16,30 @@ namespace McTicaret.Module.BusinessObjects
             : base(session)
         {
         }
-        public override void AfterConstruction()
+        protected override void OnSaving()
         {
-            base.AfterConstruction();
-            XPCollection<Ulkeler> collection = new XPCollection<Ulkeler>(Session);
-            if (collection.Count > 0)
+            base.OnSaving();
+            if (!(Session is NestedUnitOfWork) && (Session.DataLayer != null) && Session.IsNewObject(this) && string.IsNullOrEmpty(Kod))
             {
-                switch (collection.Count.ToString().Length)
+                KodTanimlari tanim = Session.FindObject<KodTanimlari>(new BinaryOperator("TabloTipi", this.GetType()));
+                if (tanim != null)
                 {
-                    case 1:
-                        Kod = $"000000{collection.Count + 1}";
-                        break;
-                    case 2:
-                        Kod = $"00000{collection.Count + 1}";
-                        break;
-                    case 3:
-                        Kod = $"0000{collection.Count + 1}";
-                        break;
-                    case 4:
-                        Kod = $"000{collection.Count + 1}";
-                        break;
-                    case 5:
-                        Kod = $"00{collection.Count + 1}";
-                        break;
-                    case 6:
-                        Kod = $"0{collection.Count + 1}";
-                        break;
-                    default:
-                        Kod = $"{collection.Count + 1}";
-                        break;
+                    string Kodu = tanim.Kodu + tanim.Ayrac;
+                    if (tanim.Yil)
+                        Kodu += DateTime.Now.Year + tanim.Ayrac;
+                    if (tanim.Ay)
+                        Kodu += DateTime.Now.Month + tanim.Ayrac;
+                    if (tanim.Gun)
+                        Kodu += DateTime.Now.Day + tanim.Ayrac;
+                    int dist = DistributedIdGeneratorHelper.Generate(Session.DataLayer, GetType().Name, $"{Kodu}Prefix");
+                    Kodu = $"{Kodu}{dist:D5}";
+                    Kod = Kodu;
                 }
-            }
-            else
-            {
-                Kod = $"000000{collection.Count + 1}";
+                else
+                {
+                    int dist = DistributedIdGeneratorHelper.Generate(Session.DataLayer, GetType().Name, $"{GetType().Name}Prefix");
+                    Kod = $"{dist:D5}";
+                }
             }
         }
         #region Fields Region...
@@ -90,63 +81,5 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
-        // Created/Updated: DESKTOP-18J0PDH\PetroDATA on DESKTOP-18J0PDH at 26.03.2019 18:57
-        public new class FieldsClass : XPObject.FieldsClass
-        {
-            public FieldsClass()
-            {
-
-            }
-
-            public FieldsClass(string propertyName) : base(propertyName)
-            {
-
-            }
-
-            public const string TanimFieldName = "Tanim";
-
-            public OperandProperty Tanim
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(TanimFieldName));
-                }
-            }
-
-            public const string KodFieldName = "Kod";
-
-            public OperandProperty Kod
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(KodFieldName));
-                }
-            }
-
-            public const string SehirlerimFieldName = "Sehirlerim";
-
-            public OperandProperty Sehirlerim
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(SehirlerimFieldName));
-                }
-            }
-        }
-
-        public new static FieldsClass Fields
-        {
-            get
-            {
-                if (ReferenceEquals(_Fields, null))
-                {
-                    _Fields = (new FieldsClass());
-                }
-
-                return _Fields;
-            }
-        }
-
-        private static FieldsClass _Fields;
     }
 }

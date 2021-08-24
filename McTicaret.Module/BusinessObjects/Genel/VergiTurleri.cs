@@ -4,6 +4,7 @@ using System.Linq;
 using DevExpress.Data.Filtering;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.Base;
+using DevExpress.Persistent.BaseImpl;
 using DevExpress.Xpo;
 
 namespace McTicaret.Module.BusinessObjects
@@ -16,9 +17,31 @@ namespace McTicaret.Module.BusinessObjects
             : base(session)
         {
         }
-        public override void AfterConstruction()
+        protected override void OnSaving()
         {
-            base.AfterConstruction();
+            base.OnSaving();
+            if (!(Session is NestedUnitOfWork) && (Session.DataLayer != null) && Session.IsNewObject(this) && string.IsNullOrEmpty(Kod))
+            {
+                KodTanimlari tanim = Session.FindObject<KodTanimlari>(new BinaryOperator("TabloTipi", this.GetType()));
+                if (tanim != null)
+                {
+                    string Kodu = tanim.Kodu + tanim.Ayrac;
+                    if (tanim.Yil)
+                        Kodu += DateTime.Now.Year + tanim.Ayrac;
+                    if (tanim.Ay)
+                        Kodu += DateTime.Now.Month + tanim.Ayrac;
+                    if (tanim.Gun)
+                        Kodu += DateTime.Now.Day + tanim.Ayrac;
+                    int dist = DistributedIdGeneratorHelper.Generate(Session.DataLayer, GetType().Name, $"{Kodu}Prefix");
+                    Kodu = $"{Kodu}{dist:D5}";
+                    Kod = Kodu;
+                }
+                else
+                {
+                    int dist = DistributedIdGeneratorHelper.Generate(Session.DataLayer, GetType().Name, $"{GetType().Name}Prefix");
+                    Kod = $"{dist:D5}";
+                }
+            }
         }
         #region Fields Region...
         private double oran;
@@ -66,63 +89,5 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
-        // Created/Updated: DESKTOP-18J0PDH\PetroDATA on DESKTOP-18J0PDH at 26.03.2019 18:57
-        public new class FieldsClass : XPObject.FieldsClass
-        {
-            public FieldsClass()
-            {
-
-            }
-
-            public FieldsClass(string propertyName) : base(propertyName)
-            {
-
-            }
-
-            public const string KodFieldName = "Kod";
-
-            public OperandProperty Kod
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(KodFieldName));
-                }
-            }
-
-            public const string TanimFieldName = "Tanim";
-
-            public OperandProperty Tanim
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(TanimFieldName));
-                }
-            }
-
-            public const string OranFieldName = "Oran";
-
-            public OperandProperty Oran
-            {
-                get
-                {
-                    return new OperandProperty(GetNestedName(OranFieldName));
-                }
-            }
-        }
-
-        public new static FieldsClass Fields
-        {
-            get
-            {
-                if (ReferenceEquals(_Fields, null))
-                {
-                    _Fields = (new FieldsClass());
-                }
-
-                return _Fields;
-            }
-        }
-
-        private static FieldsClass _Fields;
     }
 }

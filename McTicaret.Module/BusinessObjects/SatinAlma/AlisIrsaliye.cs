@@ -28,24 +28,29 @@ namespace McTicaret.Module.BusinessObjects
         }
         protected override void OnSaving()
         {
-            if (!(Session is NestedUnitOfWork)
-                 && (Session.DataLayer != null)
-                 && Session.IsNewObject(this)
-                 && string.IsNullOrEmpty(Kod))
+            base.OnSaving();
+            if (!(Session is NestedUnitOfWork) && (Session.DataLayer != null) && Session.IsNewObject(this) && string.IsNullOrEmpty(Kod))
             {
-                KodTanimlari tanim = Session.FindObject<KodTanimlari>(new BinaryOperator("Tur", EvrakTurleri.AlimIadeFaturasi));
-                int nextSequence = DistributedIdGeneratorHelper.Generate(Session.DataLayer, this.GetType().FullName, $"{tanim.Tanim}Prefix");
+                KodTanimlari tanim = Session.FindObject<KodTanimlari>(new BinaryOperator("TabloTipi", this.GetType()));
                 if (tanim != null)
                 {
-                    Kod = string.Format("{0}{1:D8}", tanim.Tanim, nextSequence);
+                    string Kodu = tanim.Kodu + tanim.Ayrac;
+                    if (tanim.Yil)
+                        Kodu += DateTime.Now.Year + tanim.Ayrac;
+                    if (tanim.Ay)
+                        Kodu += DateTime.Now.Month + tanim.Ayrac;
+                    if (tanim.Gun)
+                        Kodu += DateTime.Now.Day + tanim.Ayrac;
+                    int dist = DistributedIdGeneratorHelper.Generate(Session.DataLayer, GetType().Name, $"{Kodu}Prefix");
+                    Kodu = $"{Kodu}{dist:D5}";
+                    Kod = Kodu;
                 }
                 else
                 {
-                    Kod = string.Format("{0:D8}", nextSequence);
+                    int dist = DistributedIdGeneratorHelper.Generate(Session.DataLayer, GetType().Name, $"{GetType().Name}Prefix");
+                    Kod = $"{dist:D5}";
                 }
             }
-
-            base.OnSaving();
         }
 
     }

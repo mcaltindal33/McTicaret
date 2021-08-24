@@ -32,12 +32,8 @@ namespace McTicaret.Module.BusinessObjects
         private Ulkeler ulke;
         #endregion
 
-        public CariHesapAdresler(Session session)
-            : base(session)
-        {
-        }
+        public CariHesapAdresler(Session session) : base(session) { }
 
-        public override void AfterConstruction() => base.AfterConstruction();
 
         #region Properties Region..
         [PersistentAlias("Concat([Mahalle],' Mah. ',[Cadde],' ',[Bina],' No:',[BinaNo],'/',[DaireNo],' ',[Ilce],'/',[Sehir])")]

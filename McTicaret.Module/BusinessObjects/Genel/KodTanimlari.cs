@@ -1,77 +1,81 @@
-﻿using System;
-using System.Linq;
-using System.Text;
-using DevExpress.Xpo;
-using DevExpress.ExpressApp;
-using System.ComponentModel;
-using DevExpress.ExpressApp.DC;
-using DevExpress.Data.Filtering;
+﻿using DevExpress.ExpressApp.DC;
+using DevExpress.ExpressApp.Utils;
 using DevExpress.Persistent.Base;
-using System.Collections.Generic;
-using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
+using DevExpress.Xpo;
+
+using System;
+using System.ComponentModel;
+using System.Linq;
 
 namespace McTicaret.Module.BusinessObjects
 {
     [DefaultClassOptions]
-    //[ImageName("BO_Contact")]
-    //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
-    //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
-    //[Persistent("DatabaseTableName")]
-    // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
     public class KodTanimlari : BaseObject
-    { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
-        public KodTanimlari(Session session)
-            : base(session)
-        {
-        }
-        public override void AfterConstruction()
-        {
-            base.AfterConstruction();
-            // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
-        }
+    {
+        public KodTanimlari(Session session) : base(session) { }
+        bool _Gun;
+        bool _Ay;
+        bool _Yil;
+        string _Ayrac;
+        string _Kodu;
+        Type _TabloTipi;
 
-        int sayi;
-        string tanim;
-        EvrakTurleri tur;
+        [ValueConverter(typeof(TypeToStringConverter))]
+        [TypeConverter(typeof(LocalizedClassInfoTypeConverter))]
+        [Size(SizeAttribute.Unlimited)]
         [RuleUniqueValue]
-        public EvrakTurleri Tur
+        [XafDisplayName("Tablo Türü")]
+        [Persistent("TableType")]
+        public Type TabloTipi
         {
-            get
-            {
-                return tur;
-            }
-            set
-            {
-                SetPropertyValue(nameof(Tur), ref tur, value);
-            }
+            get => _TabloTipi;
+            set => SetPropertyValue(nameof(TabloTipi), ref _TabloTipi, value);
         }
 
 
         [Size(SizeAttribute.DefaultStringMappingFieldSize)]
-        public string Tanim
+        [XafDisplayName("Kod")]
+        [Persistent("Code")]
+        public string Kodu
         {
-            get
-            {
-                return tanim;
-            }
-            set
-            {
-                SetPropertyValue(nameof(Tanim), ref tanim, value);
-            }
+            get => _Kodu;
+            set => SetPropertyValue(nameof(Kodu), ref _Kodu, value);
         }
-        
-        public int Sayi
+
+        [Size(1)]
+        [XafDisplayName("Ayraç")]
+        [Persistent("Brace")]
+        public string Ayrac
         {
-            get
-            {
-                return sayi;
-            }
-            set
-            {
-                SetPropertyValue(nameof(Sayi), ref sayi, value);
-            }
+            get => _Ayrac;
+            set => SetPropertyValue(nameof(Ayrac), ref _Ayrac, value);
         }
+
+        [XafDisplayName("Yıl Ekle")]
+        [Persistent("Year")]
+        public bool Yil
+        {
+            get => _Yil;
+            set => SetPropertyValue(nameof(Yil), ref _Yil, value);
+        }
+
+        [XafDisplayName("Ay Ekle")]
+        [Persistent("Month")]
+        public bool Ay
+        {
+            get => _Ay;
+            set => SetPropertyValue(nameof(Ay), ref _Ay, value);
+        }
+
+        [XafDisplayName("Gün Ekle")]
+        [Persistent("Day")]
+        public bool Gun
+        {
+            get => _Gun;
+            set => SetPropertyValue(nameof(Gun), ref _Gun, value);
+        }
+
     }
 }
