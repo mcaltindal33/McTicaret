@@ -32,6 +32,7 @@ namespace McTicaret.Module.BusinessObjects.TeknikServis
             base.OnSaving();
         }
 
+        Personel _Person;
         CariHesapKontak _IlgiliKisi;
         CariHesapAdresler _Adres;
         double _GenelToplam;
@@ -126,7 +127,13 @@ namespace McTicaret.Module.BusinessObjects.TeknikServis
             get => _GenelToplam;
             set => SetPropertyValue(nameof(GenelToplam), ref _GenelToplam, value);
         }
-
+        
+        [XafDisplayName("Teknik Personel")]
+        public Personel Person
+        {
+            get => _Person;
+            set => SetPropertyValue(nameof(Person), ref _Person, value);
+        }
         [Association("TeknikServisler-TeknikServisDetays")]
         public XPCollection<TeknikServisDetay> TeknikServisDetays => GetCollection<TeknikServisDetay>(nameof(TeknikServisDetays));
     }

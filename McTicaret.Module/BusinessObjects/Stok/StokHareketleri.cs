@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+
 using DevExpress.Data.Filtering;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.Base;
@@ -8,15 +9,47 @@ using DevExpress.Xpo;
 
 namespace McTicaret.Module.BusinessObjects
 {
-    [DefaultClassOptions]
-    //[ImageName("BO_Contact")]
-    //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
-    //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
-    //[Persistent("DatabaseTableName")]
-    // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
     public class StokHareketleri : BaseObject
-    { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
+    {
         public StokHareketleri(Session session) : base(session) { }
+
+        protected override void OnChanged(string propertyName, object oldValue, object newValue)
+        {
+            base.OnChanged(propertyName, oldValue, newValue);
+            if(propertyName == nameof(Stok))
+            {
+                if (!IsDeleted)
+                {
+                    Birim = Stok.Birim;
+                    KDVOrani = Stok.SatisKDV.Oran;
+                    BirimFiyat = Stok.PerakendeSatis;
+                }
+            }
+            if(propertyName == nameof(Evrak))
+            {
+                if(!IsDeleted)
+                {
+                    Depo = Evrak.Depo;
+                    Doviz = Evrak.Doviz;
+                    Hareket = Evrak.Hareket;
+                }
+            }
+
+            if (propertyName == nameof(Miktar) || propertyName == nameof(BirimFiyat) || propertyName == nameof(IndirimsizTutar) || propertyName == nameof(IndirimOran) || propertyName == nameof(IndirimTutar) || propertyName == nameof(NetTutar) || propertyName == nameof(KDVOrani) || propertyName == nameof(KDVTutar))
+            {
+                if(!IsDeleted)
+                {
+                    IndirimsizTutar = BirimFiyat * Miktar;
+                    NetTutar = IndirimsizTutar;
+                    // Toplam = NetTutar;
+                    IndirimTutar = (IndirimsizTutar / 100) * IndirimOran;
+                    NetTutar = IndirimsizTutar - IndirimTutar;
+                    KDVTutar = (NetTutar / 100) * KDVOrani;
+                    Toplam = NetTutar + KDVTutar;
+                }
+            }
+
+        }
 
         #region Fields Region...
         private DovizTurleri doviz;
@@ -40,44 +73,16 @@ namespace McTicaret.Module.BusinessObjects
         [ImmediatePostData]
         public Stoklar Stok
         {
-            get
-            {
-                return stok;
-            }
-            set
-            {
-                SetPropertyValue(nameof(Stok), ref stok, value);
-                Birim = Stok.Birim;
-                BirimFiyat = Stok.ToptanSatisFiyati;
-            }
+            get => stok;
+            set => SetPropertyValue(nameof(Stok), ref stok, value);
         }
-        
+
         [Association("StokIslemler-HareketDetay")]
         [ImmediatePostData]
         public StokIslemler Evrak
         {
-            get
-            {
-                return evrak;
-            }
-            set
-            {
-                StokIslemler eskiIslem = evrak;
-                bool modified = SetPropertyValue(nameof(Evrak), ref evrak, value);
-                if (!IsLoading && !IsSaving && eskiIslem != evrak && modified)
-                {
-                    eskiIslem = eskiIslem ?? evrak;
-                    eskiIslem.UpdateAltToplams(true);
-                    eskiIslem.UpdateGenel(true);
-                    eskiIslem.UpdateIndirim(true);
-                    eskiIslem.UpdateKdv(true);
-                    Depo = Evrak.Depo;
-                    Hareket = Evrak.Hareket;
-                    Doviz = Evrak.Doviz;
-
-                }
-
-            }
+            get => evrak;
+            set => SetPropertyValue(nameof(Evrak), ref evrak, value);
         }
 
         [ModelDefault("DisplayFormat", "N2")]
@@ -89,12 +94,7 @@ namespace McTicaret.Module.BusinessObjects
             {
                 return miktar;
             }
-            set
-            {
-                if (SetPropertyValue(nameof(Miktar), ref miktar, value))
-                    HesaplaBirimMiktar();
-                
-            }
+            set => SetPropertyValue(nameof(Miktar), ref miktar, value);
         }
 
         public BirimTurleri Birim
@@ -114,16 +114,8 @@ namespace McTicaret.Module.BusinessObjects
         [ImmediatePostData]
         public double BirimFiyat
         {
-            get
-            {
-                return birimFiyat;
-            }
-            set
-            {
-                if (SetPropertyValue(nameof(BirimFiyat), ref birimFiyat, value))
-                    HesaplaBirimMiktar();
-                
-            }
+            get => birimFiyat;
+            set => SetPropertyValue(nameof(BirimFiyat), ref birimFiyat, value);
         }
 
         [ModelDefault("DisplayFormat", "N2")]
@@ -133,18 +125,10 @@ namespace McTicaret.Module.BusinessObjects
         {
             get
             {
-               
+
                 return indirimsizTutar;
             }
-            set
-            {
-                bool modified = SetPropertyValue(nameof(IndirimsizTutar), ref indirimsizTutar, value);
-                if (!IsLoading && !IsSaving && Evrak !=null && modified)
-                {
-                    HesaplaIndirim();
-                    Evrak.UpdateAltToplams(true);
-                }
-            }
+            set => SetPropertyValue(nameof(IndirimsizTutar), ref indirimsizTutar, value);
         }
 
         [ModelDefault("DisplayFormat", "N2")]
@@ -152,15 +136,8 @@ namespace McTicaret.Module.BusinessObjects
         [ImmediatePostData]
         public double IndirimOran
         {
-            get
-            {
-                return indirimOran;
-            }
-            set
-            {
-                if(SetPropertyValue(nameof(IndirimOran), ref indirimOran, value))
-                    HesaplaIndirim();
-            }
+            get => indirimOran;
+            set => SetPropertyValue(nameof(IndirimOran), ref indirimOran, value);
         }
 
         [ModelDefault("DisplayFormat", "N2")]
@@ -172,15 +149,7 @@ namespace McTicaret.Module.BusinessObjects
             {
                 return indirimTutar;
             }
-            set
-            {
-                bool modified = SetPropertyValue(nameof(IndirimTutar), ref indirimTutar, value);
-                if (!IsLoading && !IsSaving && Evrak != null && modified)
-                {
-                    HesaplaNetTutar();
-                    Evrak.UpdateIndirim(true);
-                }
-            }
+            set => SetPropertyValue(nameof(IndirimTutar), ref indirimTutar, value);
         }
 
         [ModelDefault("DisplayFormat", "N2")]
@@ -192,17 +161,7 @@ namespace McTicaret.Module.BusinessObjects
             {
                 return netTutar;
             }
-            set
-            {
-                bool modified = SetPropertyValue(nameof(NetTutar), ref netTutar, value);
-                if (!IsLoading && !IsSaving && Evrak != null && modified)
-                {
-                    HesaplaKdvTutar();
-                    Evrak.UpdateAltToplams(true);
-                    Evrak.UpdateIndirim(true);                    
-                }
-                
-            }
+            set => SetPropertyValue(nameof(NetTutar), ref netTutar, value);
         }
 
         [ModelDefault("DisplayFormat", "N2")]
@@ -214,16 +173,7 @@ namespace McTicaret.Module.BusinessObjects
             {
                 return kDVOrani;
             }
-            set
-            {
-                bool modified = SetPropertyValue(nameof(KDVOrani), ref kDVOrani, value);
-                if (!IsLoading && !IsSaving && Evrak != null && modified)
-                {
-                    HesaplaKdvTutar();
-                    Evrak.UpdateKdv(true);
-                }
-                
-            }
+            set => SetPropertyValue(nameof(KDVOrani), ref kDVOrani, value);
         }
 
         [ModelDefault("DisplayFormat", "N2")]
@@ -235,15 +185,7 @@ namespace McTicaret.Module.BusinessObjects
             {
                 return kDVTutar;
             }
-            set
-            {
-                bool modified = SetPropertyValue(nameof(KDVTutar), ref kDVTutar, value);
-                if (!IsLoading && !IsSaving && Evrak != null && modified)
-                {
-                    HesaplaToplam();
-                    Evrak.UpdateKdv(true);
-                }
-            }
+            set => SetPropertyValue(nameof(KDVTutar), ref kDVTutar, value);
         }
 
         [ModelDefault("DisplayFormat", "N2")]
@@ -255,18 +197,7 @@ namespace McTicaret.Module.BusinessObjects
             {
                 return toplam;
             }
-            set
-            {
-                bool modified = SetPropertyValue(nameof(Toplam), ref toplam, value);
-                if (!IsLoading && !IsSaving && Evrak != null && modified)
-                {
-                    Evrak.UpdateGenel(true);
-                }
-                //bool modified = SetPropertyValue(nameof(Toplam), ref toplam, value);
-                //if (!IsLoading && !IsSaving && Evrak != null && modified)
-                //    Evrak.UpdateGenel(true);
-
-            }
+            set => SetPropertyValue(nameof(Toplam), ref toplam, value);
         }
         [VisibleInDetailView(false)]
         public StokHareketTuru Hareket
@@ -293,7 +224,7 @@ namespace McTicaret.Module.BusinessObjects
 
             }
         }
-        
+
         public DovizTurleri Doviz
         {
             get
@@ -306,30 +237,5 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
-        void HesaplaBirimMiktar()
-        {
-            IndirimsizTutar = BirimFiyat * Miktar;
-            NetTutar = IndirimsizTutar;
-            Toplam = NetTutar;
-        }
-        void HesaplaIndirim()
-        {
-            IndirimTutar = (IndirimsizTutar / 100) * IndirimOran;
-        }
-
-        void HesaplaNetTutar()
-        {
-            NetTutar = IndirimsizTutar - IndirimTutar;
-        }
-
-        void HesaplaKdvTutar()
-        {
-            KDVTutar = (NetTutar / 100) * KDVOrani;
-        }
-
-        void HesaplaToplam()
-        {
-            Toplam = NetTutar + KDVTutar;
-        }
     }
 }

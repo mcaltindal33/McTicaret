@@ -1089,6 +1089,47 @@
         <ColumnInfo Id="Aciklama" Index="8" Width="396" />
       </Columns>
     </ListView>
+    <DetailView Id="TeknikServisler_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="14.779499404052443">
+            <LayoutGroup Id="TeknikServisler" RelativeSize="100">
+              <LayoutGroup Id="TeknikServisler_col1" RelativeSize="50">
+                <LayoutItem Id="Kodu" RelativeSize="36.363636363636367" />
+                <LayoutItem Id="Hesap" RelativeSize="27.272727272727273" />
+                <LayoutItem Id="Adres" RelativeSize="36.363636363636367" />
+                <LayoutItem Id="IlgiliKisi" RelativeSize="28.571428571428573" Removed="True" />
+                <LayoutItem Id="Tarih" RelativeSize="23.529411764705884" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="TeknikServisler_col2" RelativeSize="50" Caption="TeknikServisler_col2">
+                <LayoutItem Id="Tarih" ViewItem="Tarih" Index="0" RelativeSize="36.363636363636367" IsNewNode="True" />
+                <LayoutItem Id="IlgiliKisi" ViewItem="IlgiliKisi" Index="1" RelativeSize="63.636363636363633" IsNewNode="True" />
+                <LayoutItem Id="IskontoToplam" ViewItem="IskontoToplam" Index="1" RelativeSize="76.470588235294116" Removed="True" />
+                <LayoutItem Id="AltToplam" RelativeSize="100" Removed="True" />
+                <LayoutItem Id="GenelToplam" RelativeSize="41.1764705882353" Removed="True" />
+                <LayoutItem Id="VergiToplam" RelativeSize="58.8235294117647" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" Direction="Horizontal" RelativeSize="17.640047675804528">
+            <LayoutItem Id="Ariza" RelativeSize="50" CaptionLocation="Top" />
+            <LayoutItem Id="Sonuc" RelativeSize="50" CaptionLocation="Top" />
+          </LayoutGroup>
+          <LayoutGroup Id="TeknikServisDetays_Group" Direction="Vertical" RelativeSize="55.184743742550658">
+            <LayoutItem Id="TeknikServisDetays" RelativeSize="100" />
+          </LayoutGroup>
+          <LayoutGroup Id="Auto7703ab9d-c1e0-48b6-bc68-9ab98b0141e2" ShowCaption="False" Caption="" Direction="Horizontal" Index="3" RelativeSize="12.395709177592371" IsNewNode="True">
+            <LayoutItem Id="Item1" Index="0" RelativeSize="62.096774193548384" IsNewNode="True" />
+            <LayoutGroup Id="Autod72e64df-d61f-49ab-99c2-7d05cb028963" ShowCaption="False" Caption="" Index="1" RelativeSize="37.903225806451616" IsNewNode="True">
+              <LayoutItem Id="AltToplam" ViewItem="AltToplam" Index="0" RelativeSize="23.076923076923077" IsNewNode="True" />
+              <LayoutItem Id="IskontoToplam" ViewItem="IskontoToplam" Index="1" RelativeSize="23.076923076923077" IsNewNode="True" />
+              <LayoutItem Id="VergiToplam" ViewItem="VergiToplam" Index="2" RelativeSize="23.076923076923077" IsNewNode="True" />
+              <LayoutItem Id="GenelToplam" ViewItem="GenelToplam" Index="3" RelativeSize="30.76923076923077" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <DetailView Id="VerilenTeklifler_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">

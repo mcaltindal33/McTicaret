@@ -27,12 +27,12 @@ namespace McTicaret.Module.Controllers
 
         private void ObjectSpace_ObjectChanged(object sender, ObjectChangedEventArgs e)
         {
-            if (View.CurrentObject is TeknikServisler _Teknik)
+            if (View.CurrentObject is TeknikServisler Teknik)
             {
-                _Teknik.AltToplam = _Teknik.TeknikServisDetays.Sum(x => x.IskontosuzTutar);
-                _Teknik.IskontoToplam = _Teknik.TeknikServisDetays.Sum(x => x.IskontoTutar);
-                _Teknik.VergiToplam = _Teknik.TeknikServisDetays.Sum(x => x.VergiTutar);
-                _Teknik.GenelToplam = _Teknik.TeknikServisDetays.Sum(x => x.ToplamTutar);
+                Teknik.AltToplam = Teknik.TeknikServisDetays.Sum(x => x.IskontosuzTutar);
+                Teknik.IskontoToplam = Teknik.TeknikServisDetays.Sum(x => x.IskontoTutar);
+                Teknik.VergiToplam = Teknik.TeknikServisDetays.Sum(x => x.VergiTutar);
+                Teknik.GenelToplam = Teknik.TeknikServisDetays.Sum(x => x.ToplamTutar);
             }
         }
 

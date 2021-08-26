@@ -287,6 +287,7 @@
     <Compile Include="Controllers\EvrakListViewController.Designer.cs">
       <DependentUpon>EvrakListViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\StokIslemlerObjectViewController.cs" />
     <Compile Include="Controllers\TeknikServislerObjectViewController.cs" />
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="EnumObjects\GeneralEnumObjects.cs" />
