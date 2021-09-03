@@ -18,7 +18,7 @@ namespace McTicaret.Module.BusinessObjects
             base.OnChanged(propertyName, oldValue, newValue);
             if(propertyName == nameof(Stok))
             {
-                if (!IsDeleted)
+                if (!IsDeleted && !IsLoading && IsSaving)
                 {
                     Birim = Stok.Birim;
                     KDVOrani = Stok.SatisKDV.Oran;
@@ -27,7 +27,7 @@ namespace McTicaret.Module.BusinessObjects
             }
             if(propertyName == nameof(Evrak))
             {
-                if(!IsDeleted)
+                if(!IsDeleted && !IsLoading && IsSaving)
                 {
                     Depo = Evrak.Depo;
                     Doviz = Evrak.Doviz;
@@ -39,16 +39,39 @@ namespace McTicaret.Module.BusinessObjects
             {
                 if(!IsDeleted)
                 {
-                    IndirimsizTutar = BirimFiyat * Miktar;
-                    NetTutar = IndirimsizTutar;
-                    // Toplam = NetTutar;
-                    IndirimTutar = (IndirimsizTutar / 100) * IndirimOran;
-                    NetTutar = IndirimsizTutar - IndirimTutar;
-                    KDVTutar = (NetTutar / 100) * KDVOrani;
-                    Toplam = NetTutar + KDVTutar;
+                    IskontosuzHesap();
+                    IskontoTutarHesaplar();
+                    NetTutarHesapla();
+                    VergiHesapla();
+                    ToplamHesapla();
                 }
             }
 
+        }
+        private void ToplamHesapla()
+        {
+            Toplam = NetTutar + KDVTutar;
+        }
+
+        private void VergiHesapla()
+        {
+            if (KDVOrani != 0)
+                KDVTutar = NetTutar * (KDVOrani / 100);
+        }
+
+        private void NetTutarHesapla()
+        {
+            NetTutar = IndirimsizTutar - IndirimTutar;
+        }
+
+        private void IskontoTutarHesaplar()
+        {
+            IndirimTutar = IndirimsizTutar * (IndirimOran / 100);
+        }
+
+        private void IskontosuzHesap()
+        {
+            IndirimsizTutar = Miktar * BirimFiyat;
         }
 
         #region Fields Region...
