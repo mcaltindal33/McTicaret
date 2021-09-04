@@ -114,7 +114,6 @@
           <Item Id="SatisIadeIrsaliyesi_ListView" Removed="True" />
           <Item Id="SatisIrsaliye_ListView" Removed="True" />
           <Item Id="Sehirler_ListView" Removed="True" />
-          <Item Id="StokHareketleri_ListView" Removed="True" />
           <Item Id="Stoklar_ListView" Removed="True" />
           <Item Id="StoklarEkBirimleri_ListView" Removed="True" />
           <Item Id="StoklarGrubu_ListView" Removed="True" />
@@ -804,34 +803,16 @@
     </ListView>
     <ListView Id="BankaHesaplari_ListView" MasterDetailMode="ListViewAndDetailView" />
     <DetailView Id="CariHesapAdresler_DetailView">
-      <Items>
-        <PropertyEditor Id="Cadde" DataSourceProperty="Mahalle.Caddelerim" />
-        <PropertyEditor Id="Ilce" DataSourceProperty="Sehir.Ilcelerim" />
-        <PropertyEditor Id="Mahalle" DataSourceProperty="Ilce.Mahallelerim" />
-        <PropertyEditor Id="Sehir" DataSourceProperty="Ulke.Sehirlerim" />
-      </Items>
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
           <LayoutGroup Id="SimpleEditors" RelativeSize="100">
             <LayoutGroup Id="CariHesapAdresler" RelativeSize="100">
               <LayoutGroup Id="CariHesapAdresler_col1" RelativeSize="49.862258953168045">
-                <LayoutItem Id="Adres" RelativeSize="4.5197740112994351" />
                 <LayoutItem Id="AdresTur" RelativeSize="3.3898305084745761" />
-                <LayoutItem Id="Bina" RelativeSize="3.3898305084745761" />
-                <LayoutItem Id="BinaNo" RelativeSize="3.3898305084745761" />
-                <LayoutItem Id="Cadde" RelativeSize="3.3898305084745761" />
+                <LayoutItem Id="Adres" RelativeSize="4.5197740112994351" />
                 <LayoutItem Id="CariHesap" RelativeSize="3.3898305084745761" />
-                <LayoutItem Id="DaireNo" RelativeSize="3.3898305084745761" />
-                <LayoutItem Id="Fax" RelativeSize="3.3898305084745761" />
-                <LayoutItem Id="GSM" RelativeSize="71.751412429378533" />
               </LayoutGroup>
               <LayoutGroup Id="CariHesapAdresler_col2" RelativeSize="50.137741046831955">
-                <LayoutItem Id="Ilce" RelativeSize="4.5197740112994351" />
-                <LayoutItem Id="Mahalle" RelativeSize="3.3898305084745761" />
-                <LayoutItem Id="PostaKodu" RelativeSize="3.3898305084745761" />
-                <LayoutItem Id="Sehir" RelativeSize="3.3898305084745761" />
-                <LayoutItem Id="Telefon" RelativeSize="3.3898305084745761" />
-                <LayoutItem Id="Ulke" RelativeSize="3.3898305084745761" />
                 <LayoutItem Id="Varsayilan" RelativeSize="3.3898305084745761" />
                 <LayoutItem Id="VarsayilanSevk" RelativeSize="75.141242937853107" />
               </LayoutGroup>
@@ -1131,22 +1112,25 @@
       </Layout>
     </DetailView>
     <DetailView Id="VerilenTeklifler_DetailView">
+      <Items>
+        <PropertyEditor Id="Aciklama" RowCount="5" />
+      </Items>
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors" RelativeSize="18.905472636815919">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="15.119047619047619">
             <LayoutGroup Id="Evraklar" Index="0" RelativeSize="100">
-              <LayoutGroup Id="Evraklar_col1" RelativeSize="49.928673323823112">
-                <LayoutItem Id="Cari" RelativeSize="28.571428571428573" />
-                <LayoutItem Id="Tarih" RelativeSize="21.428571428571427" />
-                <LayoutItem Id="Turu" RelativeSize="21.428571428571427" />
-                <LayoutItem Id="BelgeNo" RelativeSize="28.571428571428573" />
+              <LayoutGroup Id="Evraklar_col1" RelativeSize="57.27109515260323">
+                <LayoutItem Id="Cari" RelativeSize="36.363636363636367" />
+                <LayoutItem Id="Tarih" RelativeSize="27.272727272727273" />
+                <LayoutItem Id="BelgeNo" RelativeSize="36.363636363636367" Index="2" />
+                <LayoutItem Id="Turu" RelativeSize="21.428571428571427" Removed="True" />
               </LayoutGroup>
-              <LayoutGroup Id="Evraklar_col2" RelativeSize="50.071326676176888">
-                <LayoutItem Id="Tutar" RelativeSize="28.571428571428573" />
-                <LayoutItem Id="Doviz" RelativeSize="21.428571428571427" />
-                <LayoutItem Id="Depo" ViewItem="Depo" Index="2" RelativeSize="21.428571428571427" IsNewNode="True" />
+              <LayoutGroup Id="Evraklar_col2" RelativeSize="42.72890484739677">
+                <LayoutItem Id="Kod" ViewItem="Kod" Index="0" RelativeSize="36.363636363636367" IsNewNode="True" Removed="True" />
+                <LayoutItem Id="Doviz" RelativeSize="27.272727272727273" Index="1" />
+                <LayoutItem Id="Depo" ViewItem="Depo" Index="2" RelativeSize="36.363636363636367" IsNewNode="True" />
                 <LayoutItem Id="Islem" RelativeSize="41.1764705882353" Index="3" Removed="True" />
-                <LayoutItem Id="Kod" ViewItem="Kod" Index="3" RelativeSize="28.571428571428573" IsNewNode="True" Removed="True" />
+                <LayoutItem Id="Tutar" RelativeSize="28.571428571428573" Removed="True" />
               </LayoutGroup>
             </LayoutGroup>
             <LayoutGroup Id="StokIslemler" Index="0" RelativeSize="30.578512396694215" Direction="Horizontal" Removed="True">
@@ -1162,12 +1146,12 @@
               </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="HareketDetay_Group" Direction="Vertical" RelativeSize="67.412935323383081" Index="1">
+          <LayoutGroup Id="HareketDetay_Group" Direction="Vertical" RelativeSize="71.785714285714292" Index="1">
             <LayoutItem Id="HareketDetay" RelativeSize="100" />
           </LayoutGroup>
-          <LayoutGroup Id="Auto90f0943a-a0c0-44b4-8d02-849471600f9a" ShowCaption="False" Caption="Auto90f0943a-a0c0-44b4-8d02-849471600f9a(18)" Direction="Horizontal" Index="2" RelativeSize="13.681592039800995" IsNewNode="True">
-            <LayoutItem Id="Aciklama" ViewItem="Aciklama" Index="0" RelativeSize="70.758620689655174" IsNewNode="True" />
-            <LayoutGroup Id="Auto30bb033c-e398-4026-9575-6508aa23ce06" ShowCaption="False" Caption="Auto30bb033c-e398-4026-9575-6508aa23ce06(20)" Index="1" RelativeSize="29.241379310344829" IsNewNode="True">
+          <LayoutGroup Id="Auto90f0943a-a0c0-44b4-8d02-849471600f9a" ShowCaption="False" Caption="Auto90f0943a-a0c0-44b4-8d02-849471600f9a(18)" Direction="Horizontal" Index="2" RelativeSize="13.095238095238095" IsNewNode="True">
+            <LayoutItem Id="Aciklama" ViewItem="Aciklama" Index="0" RelativeSize="70.639032815198618" IsNewNode="True" />
+            <LayoutGroup Id="Auto30bb033c-e398-4026-9575-6508aa23ce06" ShowCaption="False" Caption="Auto30bb033c-e398-4026-9575-6508aa23ce06(20)" Index="1" RelativeSize="29.360967184801382" IsNewNode="True">
               <LayoutItem Id="AltToplam" ViewItem="AltToplam" Index="0" RelativeSize="27.272727272727273" IsNewNode="True" />
               <LayoutItem Id="IndirimToplam" ViewItem="IndirimToplam" Index="1" RelativeSize="21.818181818181817" IsNewNode="True" />
               <LayoutItem Id="KdvToplam" ViewItem="KdvToplam" Index="2" RelativeSize="21.818181818181817" IsNewNode="True" />

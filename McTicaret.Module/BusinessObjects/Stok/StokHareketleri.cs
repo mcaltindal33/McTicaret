@@ -1,14 +1,15 @@
-﻿using System;
-using System.Linq;
-
-using DevExpress.Data.Filtering;
+﻿using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Xpo;
 
+using System;
+using System.Linq;
+
 namespace McTicaret.Module.BusinessObjects
 {
+    [DefaultListViewOptions(MasterDetailMode.ListViewOnly, true, NewItemRowPosition.Top)]
     public class StokHareketleri : BaseObject
     {
         public StokHareketleri(Session session) : base(session) { }
@@ -16,7 +17,7 @@ namespace McTicaret.Module.BusinessObjects
         protected override void OnChanged(string propertyName, object oldValue, object newValue)
         {
             base.OnChanged(propertyName, oldValue, newValue);
-            if(propertyName == nameof(Stok))
+            if (propertyName == nameof(Stok))
             {
                 if (!IsDeleted && !IsLoading && IsSaving)
                 {
@@ -25,9 +26,9 @@ namespace McTicaret.Module.BusinessObjects
                     BirimFiyat = Stok.PerakendeSatis;
                 }
             }
-            if(propertyName == nameof(Evrak))
+            if (propertyName == nameof(Evrak))
             {
-                if(!IsDeleted && !IsLoading && IsSaving)
+                if (!IsDeleted && !IsLoading && IsSaving)
                 {
                     Depo = Evrak.Depo;
                     Doviz = Evrak.Doviz;
@@ -37,7 +38,7 @@ namespace McTicaret.Module.BusinessObjects
 
             if (propertyName == nameof(Miktar) || propertyName == nameof(BirimFiyat) || propertyName == nameof(IndirimsizTutar) || propertyName == nameof(IndirimOran) || propertyName == nameof(IndirimTutar) || propertyName == nameof(NetTutar) || propertyName == nameof(KDVOrani) || propertyName == nameof(KDVTutar))
             {
-                if(!IsDeleted)
+                if (!IsDeleted)
                 {
                     IskontosuzHesap();
                     IskontoTutarHesaplar();
