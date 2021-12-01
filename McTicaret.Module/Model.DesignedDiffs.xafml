@@ -161,7 +161,7 @@
       <Item Id="Isletme" Caption="İşletme" ImageName="Action_Open" IsNewNode="True" />
       <Item Id="Kullanici" Caption="Kullanıcı İşlemleri" ImageName="Action_Open" IsNewNode="True">
         <Items IsNewNode="True">
-          <Item Id="Event_ListView" ViewId="Event_ListView" ObjectKey="" IsNewNode="True" />
+          <Item Id="Event_ListView" ObjectKey="" ViewId="Ajanda_ListView" IsNewNode="True" />
           <Item Id="Users_ListView" ViewId="Users_ListView" ObjectKey="" IsNewNode="True" />
         </Items>
       </Item>

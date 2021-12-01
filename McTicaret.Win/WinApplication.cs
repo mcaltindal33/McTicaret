@@ -7,6 +7,7 @@ using DevExpress.ExpressApp.Updating;
 using DevExpress.ExpressApp.Xpo;
 using DevExpress.ExpressApp.Security;
 using DevExpress.ExpressApp.Security.ClientServer;
+using DevExpress.ExpressApp.Notifications;
 
 namespace McTicaret.Win {
     public partial class McTicaretWindowsFormsApplication : WinApplication {

@@ -44,7 +44,6 @@ namespace McTicaret.Module.BusinessObjects
                     Kod = $"{dist:D5}";
                 }
             }
-
         }
         #region Fields Region...
         private string aciklama;

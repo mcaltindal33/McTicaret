@@ -320,6 +320,8 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
         [VisibleInDetailView(false), VisibleInDashboards(false)]
+        [ModelDefault("DisplayFormat", "N2")]
+        [ModelDefault("EditMask", "N2")]
         public double Alacak
         {
             get
@@ -329,6 +331,8 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
         [VisibleInDetailView(false), VisibleInDashboards(false)]
+        [ModelDefault("DisplayFormat", "N2")]
+        [ModelDefault("EditMask", "N2")]
         public double Borc
         {
             get
@@ -338,6 +342,8 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
         [VisibleInDetailView(false), VisibleInDashboards(false)]
+        [ModelDefault("DisplayFormat", "N2")]
+        [ModelDefault("EditMask", "N2")]
         public double Bakiye
         {
             get

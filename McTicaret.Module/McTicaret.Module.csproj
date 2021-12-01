@@ -206,6 +206,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessObjects\Ajanda\Ajanda.cs" />
     <Compile Include="BusinessObjects\Genel\AdresTurleri.cs" />
     <Compile Include="BusinessObjects\SatinAlma\AlinanSerbestMeslek.cs" />
     <Compile Include="BusinessObjects\SatisPazarlama\AlinanSiparis.cs" />
