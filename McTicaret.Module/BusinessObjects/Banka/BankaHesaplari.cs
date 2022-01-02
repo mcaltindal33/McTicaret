@@ -30,6 +30,7 @@ namespace McTicaret.Module.BusinessObjects
         private Bankalar banka;
         #endregion
 
+        [ImmediatePostData]
         public Bankalar Banka
         {
             get
@@ -42,6 +43,7 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
+        [ImmediatePostData]
         public BankaSubeleri Sube
         {
             get
