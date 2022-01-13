@@ -11,7 +11,7 @@ namespace McTicaret.Module.Controllers
     {
         public StokIslemlerObjectViewController()
         {
-            TargetObjectType = typeof(StokIslemler);
+            //TargetObjectType = typeof(StokIslemler);
         }
         protected override void OnActivated()
         {
