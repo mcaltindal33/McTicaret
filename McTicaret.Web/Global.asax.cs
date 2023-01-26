@@ -33,7 +33,7 @@ namespace McTicaret.Web {
             {
                 WebApplication.Instance.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             }
-            //WebApplication.Instance.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways;
+            WebApplication.Instance.DatabaseUpdateMode = DatabaseUpdateMode.UpdateDatabaseAlways;
             WebApplication.Instance.Setup();
             WebApplication.Instance.Start();
         }

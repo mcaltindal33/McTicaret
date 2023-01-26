@@ -14,67 +14,6 @@ namespace McTicaret.Module.BusinessObjects
     {
         public StokHareketleri(Session session) : base(session) { }
 
-        protected override void OnChanged(string propertyName, object oldValue, object newValue)
-        {
-            base.OnChanged(propertyName, oldValue, newValue);
-            if (propertyName == nameof(Stok))
-            {
-                if (!IsDeleted && !IsLoading && IsSaving)
-                {
-                    Birim = Stok.Birim;
-                    KDVOrani = Stok.SatisKDV.Oran;
-                    BirimFiyat = Stok.PerakendeSatis;
-                }
-            }
-            if (propertyName == nameof(Evrak))
-            {
-                if (!IsDeleted && !IsLoading && IsSaving)
-                {
-                    Depo = Evrak.Depo;
-                    Doviz = Evrak.Doviz;
-                    Hareket = Evrak.Hareket;
-                }
-            }
-
-            if (propertyName == nameof(Miktar) || propertyName == nameof(BirimFiyat) || propertyName == nameof(IndirimsizTutar) || propertyName == nameof(IndirimOran) || propertyName == nameof(IndirimTutar) || propertyName == nameof(NetTutar) || propertyName == nameof(KDVOrani) || propertyName == nameof(KDVTutar))
-            {
-                if (!IsDeleted)
-                {
-                    IskontosuzHesap();
-                    IskontoTutarHesaplar();
-                    NetTutarHesapla();
-                    VergiHesapla();
-                    ToplamHesapla();
-                }
-            }
-
-        }
-        private void ToplamHesapla()
-        {
-            Toplam = NetTutar + KDVTutar;
-        }
-
-        private void VergiHesapla()
-        {
-            if (KDVOrani != 0)
-                KDVTutar = NetTutar * (KDVOrani / 100);
-        }
-
-        private void NetTutarHesapla()
-        {
-            NetTutar = IndirimsizTutar - IndirimTutar;
-        }
-
-        private void IskontoTutarHesaplar()
-        {
-            IndirimTutar = IndirimsizTutar * (IndirimOran / 100);
-        }
-
-        private void IskontosuzHesap()
-        {
-            IndirimsizTutar = Miktar * BirimFiyat;
-        }
-
         #region Fields Region...
         private DovizTurleri doviz;
         private Depolar depo;
@@ -98,7 +37,18 @@ namespace McTicaret.Module.BusinessObjects
         public Stoklar Stok
         {
             get => stok;
-            set => SetPropertyValue(nameof(Stok), ref stok, value);
+            set
+            {
+                Stoklar rStok = stok;
+                bool modified = SetPropertyValue(nameof(Stok), ref stok, value); 
+                if(!IsLoading && !IsSaving && rStok != stok && modified)
+                {
+                    rStok = rStok ?? stok;
+                    BirimFiyat = rStok.PerakendeSatis;
+                    Birim = rStok.Birim;
+                    KDVOrani = rStok.SatisKDV.Oran;
+                }
+            }
         }
 
         [Association("StokIslemler-HareketDetay")]
@@ -114,23 +64,14 @@ namespace McTicaret.Module.BusinessObjects
         [ImmediatePostData]
         public double Miktar
         {
-            get
-            {
-                return miktar;
-            }
+            get => miktar;
             set => SetPropertyValue(nameof(Miktar), ref miktar, value);
         }
 
         public BirimTurleri Birim
         {
-            get
-            {
-                return birim;
-            }
-            set
-            {
-                SetPropertyValue(nameof(Birim), ref birim, value);
-            }
+            get => birim;
+            set=> SetPropertyValue(nameof(Birim), ref birim, value);
         }
 
         [ModelDefault("DisplayFormat", "N2")]
@@ -147,11 +88,7 @@ namespace McTicaret.Module.BusinessObjects
         [ImmediatePostData]
         public double IndirimsizTutar
         {
-            get
-            {
-
-                return indirimsizTutar;
-            }
+            get=> indirimsizTutar;
             set => SetPropertyValue(nameof(IndirimsizTutar), ref indirimsizTutar, value);
         }
 
@@ -169,10 +106,7 @@ namespace McTicaret.Module.BusinessObjects
         [ImmediatePostData]
         public double IndirimTutar
         {
-            get
-            {
-                return indirimTutar;
-            }
+            get=> indirimTutar;
             set => SetPropertyValue(nameof(IndirimTutar), ref indirimTutar, value);
         }
 
@@ -181,10 +115,7 @@ namespace McTicaret.Module.BusinessObjects
         [ImmediatePostData]
         public double NetTutar
         {
-            get
-            {
-                return netTutar;
-            }
+            get=> netTutar;
             set => SetPropertyValue(nameof(NetTutar), ref netTutar, value);
         }
 
@@ -193,10 +124,7 @@ namespace McTicaret.Module.BusinessObjects
         [ImmediatePostData]
         public double KDVOrani
         {
-            get
-            {
-                return kDVOrani;
-            }
+            get=> kDVOrani;
             set => SetPropertyValue(nameof(KDVOrani), ref kDVOrani, value);
         }
 
@@ -205,10 +133,7 @@ namespace McTicaret.Module.BusinessObjects
         [ImmediatePostData]
         public double KDVTutar
         {
-            get
-            {
-                return kDVTutar;
-            }
+            get=> kDVTutar;
             set => SetPropertyValue(nameof(KDVTutar), ref kDVTutar, value);
         }
 
@@ -217,10 +142,7 @@ namespace McTicaret.Module.BusinessObjects
         [ImmediatePostData]
         public double Toplam
         {
-            get
-            {
-                return toplam;
-            }
+            get=> toplam;
             set => SetPropertyValue(nameof(Toplam), ref toplam, value);
         }
         [VisibleInDetailView(false)]
@@ -238,27 +160,14 @@ namespace McTicaret.Module.BusinessObjects
 
         public Depolar Depo
         {
-            get
-            {
-                return depo;
-            }
-            set
-            {
-                SetPropertyValue(nameof(Depo), ref depo, value);
-
-            }
+            get=> depo;
+            set=> SetPropertyValue(nameof(Depo), ref depo, value);
         }
 
         public DovizTurleri Doviz
         {
-            get
-            {
-                return doviz;
-            }
-            set
-            {
-                SetPropertyValue(nameof(Doviz), ref doviz, value);
-            }
+            get=> doviz;
+            set=> SetPropertyValue(nameof(Doviz), ref doviz, value);
         }
 
     }

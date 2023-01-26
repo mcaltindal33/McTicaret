@@ -20,6 +20,7 @@ namespace McTicaret.Module.BusinessObjects
         public Evraklar() { }
         public Evraklar(Session session) : base(session) { }
         #region Fields Region...
+        string fTutarYazi;
         private string kod;
         private CariHesaplar cari;
         private string aciklama;
@@ -130,7 +131,7 @@ namespace McTicaret.Module.BusinessObjects
                 SetPropertyValue(nameof(Aciklama), ref aciklama, value);
             }
         }
-        
+
         [Size(SizeAttribute.DefaultStringMappingFieldSize)]
         public string Kod
         {
@@ -144,6 +145,14 @@ namespace McTicaret.Module.BusinessObjects
             }
         }
 
+        
+        [Size(SizeAttribute.DefaultStringMappingFieldSize)]
+        [VisibleInDetailView(false),VisibleInListView(false)]
+        public string TutarYazi
+        {
+            get => fTutarYazi;
+            set => SetPropertyValue(nameof(TutarYazi), ref fTutarYazi, value);
+        }
         protected override void OnSaving()
         {
             base.OnSaving();
@@ -169,7 +178,7 @@ namespace McTicaret.Module.BusinessObjects
                     Kod = $"{dist:D5}";
                 }
             }
-
+            TutarYazi = GeneralValue.yaziyaCevir(Convert.ToDecimal(Tutar));
         }
 
     }

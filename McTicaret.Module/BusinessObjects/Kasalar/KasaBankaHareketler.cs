@@ -101,7 +101,7 @@ namespace McTicaret.Module.BusinessObjects
         }
         protected override void OnSaving()
         {
-            if(BankaIslem != null)
+            if(BankaIslem == null)
             {
                 BankaHareket BankaIslems = new BankaHareket(Session)
                 {
@@ -123,7 +123,7 @@ namespace McTicaret.Module.BusinessObjects
                 BankaIslem.Tutar = Tutar;
                 BankaIslem.Save();
             }
-            if(KasaIslem != null)
+            if(KasaIslem == null)
             {
                 KasaHareket KasaIslems = new KasaHareket(Session)
                 {

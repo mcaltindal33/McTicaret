@@ -11,7 +11,7 @@ namespace McTicaret.Module.Controllers
     {
         public StokIslemlerObjectViewController()
         {
-            //TargetObjectType = typeof(StokIslemler);
+            TargetObjectType = typeof(StokIslemler);
         }
         protected override void OnActivated()
         {
@@ -27,6 +27,7 @@ namespace McTicaret.Module.Controllers
                 Islem.IndirimToplam = Islem.HareketDetay.Sum(x => x.IndirimTutar);
                 Islem.KdvToplam = Islem.HareketDetay.Sum(x => x.KDVTutar);
                 Islem.Tutar = Islem.HareketDetay.Sum(x => x.Toplam);
+                Islem.GenelToplam = Islem.HareketDetay.Sum(x => x.Toplam);
             }
         }
 
@@ -35,5 +36,6 @@ namespace McTicaret.Module.Controllers
             ObjectSpace.ObjectChanged -= ObjectSpace_ObjectChanged;
             base.OnDeactivated();
         }
+        
     }
 }

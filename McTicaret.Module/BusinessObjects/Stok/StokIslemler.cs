@@ -39,8 +39,6 @@ namespace McTicaret.Module.BusinessObjects
         {
             get
             {
-                if(!IsLoading && !IsSaving && altToplam == 0)
-                    UpdateAltToplams(false);
                 return altToplam;
             }
             set
@@ -55,8 +53,6 @@ namespace McTicaret.Module.BusinessObjects
         {
             get
             {
-                if (!IsLoading && !IsSaving)
-                    UpdateKdv(false);
                 return kdvToplam;
             }
             set
@@ -71,8 +67,6 @@ namespace McTicaret.Module.BusinessObjects
         {
             get
             {
-                if (!IsLoading && !IsSaving)
-                    UpdateIndirim(false);
                 return ındirimToplam;
             }
             set
@@ -112,63 +106,12 @@ namespace McTicaret.Module.BusinessObjects
         {
             get
             {
-                if (!IsLoading && !IsSaving)
-                    UpdateGenel(false);
-
                 return genelToplam;
             }
             set
             {
                 SetPropertyValue(nameof(GenelToplam), ref genelToplam, value);
             }
-        }
-        public void UpdateAltToplams(bool forceChangeEvents)
-        {
-            double? oldToplam = altToplam;
-            double temp = 0;
-            foreach (StokHareketleri item in HareketDetay)
-            {
-                temp += item.IndirimsizTutar;
-            }
-            altToplam = temp;
-            if(forceChangeEvents)
-                OnChanged(nameof(AltToplam), oldToplam, altToplam);
-        }
-        public void UpdateKdv(bool forceChangeEvents)
-        {
-            double? oldKdv = kdvToplam;
-            double temp = 0;
-            foreach (StokHareketleri item in HareketDetay)
-            {
-                temp += item.KDVTutar;
-            }
-            kdvToplam = temp;
-            if (forceChangeEvents)
-                OnChanged(nameof(IndirimToplam), oldKdv, kdvToplam);
-        }
-        public void UpdateIndirim(bool forceChangeEvents)
-        {
-            double? oldIndirim = ındirimToplam;
-            double temp = 0;
-            foreach (StokHareketleri item in HareketDetay)
-            {
-                temp += item.IndirimTutar;
-            }
-            ındirimToplam = temp;
-            if (forceChangeEvents)
-                OnChanged(nameof(IndirimToplam), oldIndirim, ındirimToplam);
-        }
-        public void UpdateGenel(bool forceChangeEvents)
-        {
-            double? oldIndirim = genelToplam;
-            double temp = 0;
-            foreach (StokHareketleri item in HareketDetay)
-            {
-                temp += item.Toplam;
-            }
-            genelToplam = temp;
-            if (forceChangeEvents)
-                OnChanged(nameof(GenelToplam), oldIndirim, genelToplam);
         }
         protected override void OnSaving()
         {
